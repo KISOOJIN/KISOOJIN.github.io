@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SOOJIN BLOG</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 19 Sep 2022 22:28:08 +0900</pubDate>
+    <lastBuildDate>Mon, 19 Sep 2022 22:28:08 +0900</lastBuildDate>
+    <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Section 1 회고</title>
+        <description>&lt;h2 id=&quot;1-내가-여기서-얻고-싶은게-무엇인가&quot;&gt;1. 내가 여기서 얻고 싶은게 무엇인가?&lt;/h2&gt;
+
+&lt;p&gt;Section 1 동안에 나의 목표는 무엇인가?에 대해 꾸준히 상기하며 보내지는 않았던 것 같다.&lt;/p&gt;
+
+&lt;p&gt;그냥 그날 그날의 주어진 내용을 습득하기에 급급했고 따라가는 것만으로도 다행이었다.&lt;/p&gt;
+
+&lt;p&gt;그래서 지금에 회고를 하면서 다시 내 목표는 무엇이고 여기서 무엇을 얻고 싶었었는지에 대해 다시 한번 생각해본다.&lt;/p&gt;
+
+&lt;p&gt;이곳에서 나는 개발자에게 요구되는 역량(전문적인 지식, 노하우, …)을 얻고 싶었고 개발자가 되기 위한 방향성을 잡고 싶었다.&lt;/p&gt;
+
+&lt;p&gt;현재 돌이켜보면 아직은 시작이기 때문에 확실하게 말할 건 없지만 그래도 무지하게 어렵지만 개발에 대한 흥미는 점점 더 생기고 있다.&lt;/p&gt;
+
+&lt;p&gt;새로운 내용을 배우고 습득하면서 버거울 때도 있지만 &lt;strong&gt;새로운 것을 배우면서 즐기는 개발자&lt;/strong&gt;가 되고 싶다는 생각과 목표가 생겼다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-keep-problem&quot;&gt;2. Keep, Problem&lt;/h2&gt;
+
+&lt;h3 id=&quot;목표를-달성하기-위해-했던-노력은-무엇이며-반드시-유지해야할-노력은-무엇인가keep&quot;&gt;&lt;strong&gt;목표를 달성하기 위해 했던 노력은 무엇이며 반드시 유지해야할 노력은 무엇인가?&lt;/strong&gt;(&lt;strong&gt;keep)&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;매일 2시간 이상 배운 내용 복습하기&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;주 2회 이상 30분 운동하기&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자기주도적 학습 습관 들이기(궁금한 내용 바로 찾아보기, 이해 안되면 넘어가고 나중에 다시 찾아보기)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;주말 중 하루는 공부하기&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;목표를 달성하기 위해 위와 같은 노력을 했었고 다 유지해야 한다고 생각한다. 아주 기본적인 노력이기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;여기서 더 노력을 안하면 발전할 수 없으니까 ^^&lt;/p&gt;
+
+&lt;h3 id=&quot;목표를-달성하는데-있어서-가장-큰-장애물은-무엇이었는가-problem&quot;&gt;&lt;strong&gt;목표를 달성하는데 있어서 가장 큰 장애물은 무엇이었는가? (problem)&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;공부할 체력이 너무 부족했다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;일정한 시간에 잠들지 않아 몸 생체리듬이 좋지 못했다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;일어나는 것은 힘들지 않지만 자는게 어렵다. 불면증이 나아지긴 했지만 매일 새벽 1시 이전에는 잘 수 있도록 노력하고 영양제랑 운동을 열심히 해서 체력을 길러야 겠다. 체력이 없으니까 아무것도 할 수가 없었다. 공부를 하고 싶어도 몸이 안 따라주면 서럽고 슬프고 자괴감이 들어서 내 몸을 열심히 단련해야겠다고 생각했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-tryaction&quot;&gt;3. Try(Action)&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;새벽 1시 이전에 자기( 잠 안와도 핸드폰 보지 말기)&lt;/li&gt;
+  &lt;li&gt;힘들어도 근력 운동하기(반드시 쉬운 운동만 하지 않고 일어나서 하는 운동하자…)&lt;/li&gt;
+  &lt;li&gt;밥을 잘 챙겨 먹어서 영양분 섭취를 잘 해야겠다…&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;4-우선순위&quot;&gt;4. 우선순위&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Try 1. 새벽 1시 이전에 반드시 자기(절대 핸드폰 보지 말기).&lt;/li&gt;
+  &lt;li&gt;Try 2. 밥을 잘 챙겨 먹기(하루에 2끼 이상은 먹기)&lt;/li&gt;
+  &lt;li&gt;Try 3. 힘들어도 근력 운동하기(쉬운 운동만 하지 말기)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 19 Sep 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-09/Section1</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-09/Section1</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>Some articles are just so long they deserve a really long title to see if things will break well</title>
+        <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 04 Jul 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2018-07/t1</link>
+        <guid isPermaLink="true">http://localhost:4000/2018-07/t1</guid>
+        
+        
+        <category>travel</category>
+        
+      </item>
+    
+      <item>
+        <title>Sample Post</title>
+        <description>&lt;p&gt;This is a sample post.&lt;br /&gt;
+&lt;dfn info=&quot;You can add extra information&quot;&gt;Hover&lt;/dfn&gt; me.&lt;/p&gt;
+
+&lt;h2 id=&quot;header&quot;&gt;Header&lt;/h2&gt;
+
+&lt;h1 id=&quot;head-1-&quot;&gt;Head 1: ‘#’&lt;/h1&gt;
+&lt;h2 id=&quot;head-2-&quot;&gt;Head 2: ‘##’&lt;/h2&gt;
+&lt;h3 id=&quot;head-3-&quot;&gt;Head 3: ‘###’&lt;/h3&gt;
+
+&lt;h2 id=&quot;code-block&quot;&gt;Code block&lt;/h2&gt;
+&lt;p&gt;A Python Example:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Socrates
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;The only true wisdom is in knowing you know nothing.&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;A HTML Example:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;quote&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Maya Angelou --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Try to be a rainbow in someone&apos;s cloud.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A C Example:&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Confucius&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Everything has beauty, but not everyone sees it.&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 01 Nov 2017 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2017-11/s2</link>
+        <guid isPermaLink="true">http://localhost:4000/2017-11/s2</guid>
+        
+        
+        <category>writing</category>
+        
+      </item>
+    
+  </channel>
+</rss>
