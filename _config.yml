@@ -10,7 +10,7 @@ baseurl: # the subpath of the site
 url: http://starry99.github.io/catbook # the base hostname & protocol for your site
 
 permalink: /:year-:month/:title
-timezone:
+timezone: Asia/Seoul
 
 favicon: /assets/img/favicon.ico
 
@@ -23,7 +23,7 @@ user:
   name: SOOJIN
   pic: /assets/img/cat.jpg
   picAlt: "catbook"
-  job: a category-centric theme
+  job: welcome to my blog!
   aboutme: true # comment this out if you don't need the 'about' page.
 
 exclude:
