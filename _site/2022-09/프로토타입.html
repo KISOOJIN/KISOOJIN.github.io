@@ -4,7 +4,7 @@
 
 
 <head>
-  <title>SOOJIN BLOG</title>
+  <title>프로토타입(Prototype) | SOOJIN BLOG</title>
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/assets/css/main.css" media="all">
-  <link rel="canonical" href="http://localhost:4000/aboutme">
+  <link rel="canonical" href="http://localhost:4000/2022-09/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85">
   <link rel="alternate" type="application/rss+xml" title="SOOJIN BLOG"
     href="/feed.xml" />
 
@@ -104,15 +104,86 @@
     
     <main class="main">
 
-    <section class="aboutme">
-    <div class="post_content">
-        <p>
-            If you don't need 'about' page, edit the _config.yml to comment out the code.
-            <br><br>
-            <img src="https://starry99.github.io/catbook/assets/img/cat1.jpg">
-        </p>
-    </div>
-</section>
+    <div class="post">
+  <div>
+    
+    <p class="post_title">프로토타입(Prototype)</p>
+    
+  </div>
+  <div class="post_data">
+    
+    <span class="post_date">Sep 21, 2022</span>
+    
+    
+    <span class="post_categories">
+      &raquo; 
+      <a href="/categories/TIL">TIL</a>
+    </span>
+    
+  </div>
+  <div class="post_content">
+    <blockquote>
+  <h2 id="프로토타입prototype">프로토타입(Prototype)</h2>
+</blockquote>
+
+<p>프로토타입은 <strong>원형 객체</strong>를 의미한다.
+모든 객체는 그들의 프로토타입으로부터 속성(property)와 메소드를 상속받는데, 이때 상속되는 정보를 제공하는 객체를 <code class="language-plaintext highlighter-rouge">프로토타입(prototype)</code>이라고 합니다.</p>
+
+<p><br /></p>
+
+<blockquote>
+  <h2 id="prototype과-__proto__-의-차이">.prototype과 <code class="language-plaintext highlighter-rouge">__proto__</code> 의 차이</h2>
+</blockquote>
+
+<ul>
+  <li>.prototype은 new로 인스턴스를 만들 때 <code class="language-plaintext highlighter-rouge">__proto__</code>를 생성할 때 사용하는 객체다.</li>
+  <li><code class="language-plaintext highlighter-rouge">__proto__</code>는 메서드 등을 찾는데 사용되는 실제 객체이다.</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">gender</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">gender</span> <span class="o">=</span> <span class="nx">gender</span><span class="p">;</span>
+
+
+<span class="nx">sleep</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">은 잠에 들었습니다`</span><span class="p">);</span>
+ <span class="p">}</span>
+<span class="p">}</span><span class="c1">//Person이라는 새로운 객체가 생성됨</span>
+
+<span class="kd">let</span> <span class="nx">kimcoding</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">'</span><span class="s1">김코딩</span><span class="dl">'</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="dl">'</span><span class="s1">female</span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">// 여기서 Person이 .prototype</span>
+
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">===</span> <span class="nx">Person</span><span class="p">;</span><span class="c1">//true</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">===</span> <span class="nx">kimcoding</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">;</span><span class="c1">//true</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sleep</span> <span class="o">===</span> <span class="nx">kimcoding</span><span class="p">.</span><span class="nx">sleep</span><span class="p">;</span><span class="c1">//true</span>
+
+
+</code></pre></div></div>
+
+<p><br /></p>
+
+<blockquote>
+  <h2 id="클래스-인스턴스-프로토타입의-관계">클래스, 인스턴스, 프로토타입의 관계</h2>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/111376707/191464092-7bf2a707-d37c-4d86-9088-11a8d5dbee5d.png" alt="example" /></p>
+
+  </div>
+
+
+  
+  <div class="post_comment">
+
+    
+
+    
+
+
+  </div>
+  
+
+</div>
 
 
     </main>
