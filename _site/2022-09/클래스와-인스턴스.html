@@ -4,7 +4,7 @@
 
 
 <head>
-  <title>SOOJIN BLOG</title>
+  <title>클래스와 인스턴스 | SOOJIN BLOG</title>
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/assets/css/main.css" media="all">
-  <link rel="canonical" href="http://localhost:4000/categories/TIL">
+  <link rel="canonical" href="http://localhost:4000/2022-09/%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4">
   <link rel="alternate" type="application/rss+xml" title="SOOJIN BLOG"
     href="/feed.xml" />
 
@@ -104,44 +104,110 @@
     
     <main class="main">
 
-    <!-- each category page -->
+    <div class="post">
+  <div>
+    
+    <p class="post_title">클래스와 인스턴스</p>
+    
+  </div>
+  <div class="post_data">
+    
+    <span class="post_date">Sep 21, 2022</span>
+    
+    
+    <span class="post_categories">
+      &raquo; 
+      <a href="/categories/TIL">TIL</a>
+    </span>
+    
+  </div>
+  <div class="post_content">
+    <blockquote>
+  <h2 id="클래스와-인스턴스는-무엇일까">클래스와 인스턴스는 무엇일까?</h2>
+</blockquote>
 
-<div class="archive">
-  <p class="archive_type">TIL</p>
-  <ul>
-    
-    
-    <li>
-        <time class='archive_date' datetime='2022-09-21T00:00:00+09:00'>
-          Sep 21, 2022
-        </time>
-        <div class='archive_title'>
-          <a href='/2022-09/%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4'>
-            클래스와 인스턴스
-          </a>
-        </div>
-      </li>
-    
-    
-    
-    <li>
-        <time class='archive_date' datetime='2022-09-19T00:00:00+09:00'>
-          Sep 19, 2022
-        </time>
-        <div class='archive_title'>
-          <a href='/2022-09/Section1'>
-            Section 1 회고
-          </a>
-        </div>
-      </li>
-    
+<p>클래스와 인스턴스가 무엇인가에 대해 말하기 위해서 <strong>객체 지향 프로그래밍</strong>에 대해 알아보아야 한다.</p>
+
+<p>객체 지향 프로그래밍은 설계도라고 할 수 있는 하나의 청사진을 만들고, 그 청사진을 바탕으로 한 객체를 만드는 프로그래밍 패턴이다.</p>
+
+<p>✔ 객체 지향 프로그래밍의 청사진을 <code class="language-plaintext highlighter-rouge">클래스</code> 라고 부른다.
+✔ 청사진을 바탕으로 한 객체, 인스턴스 객체(instance object)를 <code class="language-plaintext highlighter-rouge">인스턴스</code>라고 부른다.</p>
+
+<blockquote>
+  <h2 id="객체는-어떤-식으로-만들어질까">객체는 어떤 식으로 만들어질까?</h2>
+</blockquote>
+
+<p>객체는 일반적인 함수를 정의하듯 만든다. 하지만 함수와 이용하는 방법이 조금은 다르다.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">new</code>라는 키워드를 사용하여 새로운 인스턴스를 만든다.</li>
+  <li>일반적인 다른 함수와 구분하기 위해 클래스를 <code class="language-plaintext highlighter-rouge">대문자</code>로 시작하는 일반명사로 만든다.</li>
+</ol>
+
+<blockquote>
+  <h2 id="클래스를-만드는-문법">클래스를 만드는 문법</h2>
+</blockquote>
+
+<p>클래스를 만드는 문법으로 ES5 와 ES6가 주로 사용되며 현재는 ES6가 주로 사용된다고 한다. ES6는 클래스를 만드는 새로운 문법으로 class 키워드를 이용하여</p>
+
+<p><strong>ES5 와 ES6의 클래스 작성 문법</strong></p>
+
+<ul>
+  <li>ES5 : 함수로 정의할 수 있다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function Laptop(brand, name, color){
+  this.brand = brand;
+  this.name = name;
+  this.color = color;
+}
+//Laptop이 class, function은 생성자 함수
+
+Laptop.prototype.recharge = function(){
+  //배터리 충전을 구현하는 코드
+}
+Laptop.prototype.operate = function(){
+  // 시스템을 실행하는 코드
+}
+
+let gram = new Laptop('LG', 'gram', 'white');// 인스턴스
+gram.color; // 'white'
+gram.recharge(); //그램이 배터리를 충전합니다.
+</code></pre></div></div>
+
+<ul>
+  <li>ES6 : class라는 키워드를 이용해서 정의할 수 있다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> class Laptop{
+    constructor(brand, name, color){
+  this.brand = brand;
+  this.name = name;
+  this.color = color;
+}
+
+recharge() {
+
+}
+</code></pre></div></div>
+
+<p>✔ 여기서 보이는 함수는 객체지향 프로그래밍에서 <code class="language-plaintext highlighter-rouge">생성자(constructor) 함수</code> 라고 부르며, 인스턴스가 만들어질 때 실행되는 코드이다. 생성자 함수는 return 값을 만들지 않는다.</p>
+
+  </div>
+
+
+  
+  <div class="post_comment">
+
     
 
-  </ul>
+    
+
+
+  </div>
+  
+
 </div>
-
-<!-- main page -->
-
 
 
     </main>

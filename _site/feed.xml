@@ -6,9 +6,91 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 21 Sep 2022 13:18:35 +0900</pubDate>
-    <lastBuildDate>Wed, 21 Sep 2022 13:18:35 +0900</lastBuildDate>
+    <pubDate>Wed, 21 Sep 2022 13:26:09 +0900</pubDate>
+    <lastBuildDate>Wed, 21 Sep 2022 13:26:09 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>클래스와 인스턴스</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;클래스와-인스턴스는-무엇일까&quot;&gt;클래스와 인스턴스는 무엇일까?&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;클래스와 인스턴스가 무엇인가에 대해 말하기 위해서 &lt;strong&gt;객체 지향 프로그래밍&lt;/strong&gt;에 대해 알아보아야 한다.&lt;/p&gt;
+
+&lt;p&gt;객체 지향 프로그래밍은 설계도라고 할 수 있는 하나의 청사진을 만들고, 그 청사진을 바탕으로 한 객체를 만드는 프로그래밍 패턴이다.&lt;/p&gt;
+
+&lt;p&gt;✔ 객체 지향 프로그래밍의 청사진을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;클래스&lt;/code&gt; 라고 부른다.
+✔ 청사진을 바탕으로 한 객체, 인스턴스 객체(instance object)를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;인스턴스&lt;/code&gt;라고 부른다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;객체는-어떤-식으로-만들어질까&quot;&gt;객체는 어떤 식으로 만들어질까?&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;객체는 일반적인 함수를 정의하듯 만든다. 하지만 함수와 이용하는 방법이 조금은 다르다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new&lt;/code&gt;라는 키워드를 사용하여 새로운 인스턴스를 만든다.&lt;/li&gt;
+  &lt;li&gt;일반적인 다른 함수와 구분하기 위해 클래스를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;대문자&lt;/code&gt;로 시작하는 일반명사로 만든다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;클래스를-만드는-문법&quot;&gt;클래스를 만드는 문법&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;클래스를 만드는 문법으로 ES5 와 ES6가 주로 사용되며 현재는 ES6가 주로 사용된다고 한다. ES6는 클래스를 만드는 새로운 문법으로 class 키워드를 이용하여&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ES5 와 ES6의 클래스 작성 문법&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ES5 : 함수로 정의할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Laptop(brand, name, color){
+  this.brand = brand;
+  this.name = name;
+  this.color = color;
+}
+//Laptop이 class, function은 생성자 함수
+
+Laptop.prototype.recharge = function(){
+  //배터리 충전을 구현하는 코드
+}
+Laptop.prototype.operate = function(){
+  // 시스템을 실행하는 코드
+}
+
+let gram = new Laptop(&apos;LG&apos;, &apos;gram&apos;, &apos;white&apos;);// 인스턴스
+gram.color; // &apos;white&apos;
+gram.recharge(); //그램이 배터리를 충전합니다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ES6 : class라는 키워드를 이용해서 정의할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; class Laptop{
+    constructor(brand, name, color){
+  this.brand = brand;
+  this.name = name;
+  this.color = color;
+}
+
+recharge() {
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;✔ 여기서 보이는 함수는 객체지향 프로그래밍에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;생성자(constructor) 함수&lt;/code&gt; 라고 부르며, 인스턴스가 만들어질 때 실행되는 코드이다. 생성자 함수는 return 값을 만들지 않는다.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 Sep 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-09/%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-09/%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>Section 1 회고</title>
