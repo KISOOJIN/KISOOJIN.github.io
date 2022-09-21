@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 21 Sep 2022 14:14:35 +0900</pubDate>
-    <lastBuildDate>Wed, 21 Sep 2022 14:14:35 +0900</lastBuildDate>
+    <pubDate>Wed, 21 Sep 2022 15:19:04 +0900</pubDate>
+    <lastBuildDate>Wed, 21 Sep 2022 15:19:04 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -87,6 +87,108 @@ recharge() {
         <pubDate>Wed, 21 Sep 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/2022-09/%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4</link>
         <guid isPermaLink="true">http://localhost:4000/2022-09/%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>객체 지향 프로그래밍(OOP)</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;객체-지향-프로그래밍oop&quot;&gt;객체 지향 프로그래밍(OOP)&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;객체 지향 프로그래밍&lt;/code&gt; 이라는 패러다임이 등장하며, 별개의 변수와 함수로 순차적으로 작동하는 것을 넘어, 데이터의 접근과, 데이터의 처리 과정에 대한 모형을 만들어 내는 방식을 고안해내었다. =&amp;gt; &lt;strong&gt;데이터와 기능을 한 번에 묶어 처리가능&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;OOP는 프로그램 설계 철학이다.&lt;/li&gt;
+  &lt;li&gt;OOP의 모든 것은 ‘객체’로 그룹화된다.&lt;/li&gt;
+  &lt;li&gt;OOP의 4가지 주요 개념(캡슐화, 추상화, 상속, 다형성)을 통해 재사용성을 얻을 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;객체 지향 프로그래밍에서는&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; class&lt;/code&gt;에는 공통적인 기능과 고유의 속성이 존재하는데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;constructor(생성자 함수)&lt;/code&gt;를 이용해 고유의 값인 속성과 메소드를 부여하면서 각각의&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; instance&lt;/code&gt;를 만들어 낸다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;oop-basic-concepts&quot;&gt;OOP Basic Concepts&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Encapsulation(캡슐화)&lt;/li&gt;
+  &lt;li&gt;Inheritance(상속)&lt;/li&gt;
+  &lt;li&gt;Abstraction(추상화)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Polymorphism(다형성)&lt;/p&gt;
+
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;h4&gt;캡슐화 Encapsulation
+&lt;/h4&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;데이터와 기능을 하나의 단위(객체)로 묶는 것&lt;/li&gt;
+      &lt;li&gt;은닉(hiding): 구현은 숨기고, 동작만 노출시킴&lt;/li&gt;
+      &lt;li&gt;느슨한 결합(Loose Coupling)에 유리: 언제든 구현 수정 가능&lt;/li&gt;
+      &lt;li&gt;코드가 복잡하지 않게 만들고, 재사용성을 높인다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;h4&gt;추상화 Abstraction
+&lt;/h4&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;내부 구현은 복잡하지만, 실제로 노출되는 부분은 단순하게 만드는 것이 추상화이다. 이러한 추상화를 통해 인터페이스가 단순해진다. 많은 기능이 노출되지 않으므로 예기치 못한 사용상의 변화가 발생하지 않도록 만들 수 있다.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;코드가 복잡하지 않게 만들고, 단순하된 사용으로 변화에 대한 영향을 최소화&lt;/p&gt;
+
+        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;blockquote&gt;
+      &lt;h4&gt;상속 Inheritance
+&lt;/h4&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;상속은 부모 클래스의 특징을 자식 클래스가 물려받는 것을 말한다.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;불필요한 코드를 줄여 재사용성을 높인다.&lt;/p&gt;
+
+        &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;blockquote&gt;
+      &lt;h4&gt;다형성 Polymorphism
+&lt;/h4&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;객체마다 똑같은 메서드를 사용하더라도 그 메서드가 조금씩 다르게 작동하는 것을 말한다.&lt;/li&gt;
+      &lt;li&gt;조건문 대신 객체의 특성에 맞게 달리 작성이 가능하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 21 Sep 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-09/%EA%B0%9D%EC%B2%B4-%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-09/%EA%B0%9D%EC%B2%B4-%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D</guid>
         
         
         <category>TIL</category>
