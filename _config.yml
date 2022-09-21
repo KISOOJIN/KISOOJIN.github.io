@@ -22,7 +22,7 @@ user:
   name: SOOJIN
   pic: /assets/img/cat.jpg
   picAlt: "catbook"
-  job: welcome to my blog!
+  job: "배운 것을 기록하는 공간"
   aboutme: # comment this out if you don't need the 'about' page.
 
 exclude:
