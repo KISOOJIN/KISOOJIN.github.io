@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 21 Sep 2022 18:08:28 +0900</pubDate>
-    <lastBuildDate>Wed, 21 Sep 2022 18:08:28 +0900</lastBuildDate>
+    <pubDate>Wed, 21 Sep 2022 18:15:53 +0900</pubDate>
+    <lastBuildDate>Wed, 21 Sep 2022 18:15:53 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -17,7 +17,7 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;프로토타입은 &lt;strong&gt;원형 객체&lt;/strong&gt;를 의미한다.
-모든 객체는 그들의 프로토타입으로부터 속성(property)와 메소드를 상속받는데, 이때 상속되는 정보를 제공하는 객체를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로토타입(prototype)&lt;/code&gt;이라고 합니다.&lt;/p&gt;
+모든 객체는 그들의 프로토타입으로부터 속성(property)와 메소드를 상속받는데, 이때 상속되는 정보를 제공하는 객체를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로토타입(prototype)&lt;/code&gt;이라고 한다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -105,39 +105,39 @@
   &lt;li&gt;ES5 : 함수로 정의할 수 있다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function Laptop(brand, name, color){
-  this.brand = brand;
-  this.name = name;
-  this.color = color;
-}
-//Laptop이 class, function은 생성자 함수
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Laptop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//Laptop이 class, function은 생성자 함수&lt;/span&gt;
 
-Laptop.prototype.recharge = function(){
-  //배터리 충전을 구현하는 코드
-}
-Laptop.prototype.operate = function(){
-  // 시스템을 실행하는 코드
-}
+&lt;span class=&quot;nx&quot;&gt;Laptop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;recharge&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//배터리 충전을 구현하는 코드&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Laptop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;operate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 시스템을 실행하는 코드&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 
-let gram = new Laptop(&apos;LG&apos;, &apos;gram&apos;, &apos;white&apos;);// 인스턴스
-gram.color; // &apos;white&apos;
-gram.recharge(); //그램이 배터리를 충전합니다.
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gram&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Laptop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;LG&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;gram&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 인스턴스&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &apos;white&apos;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;recharge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//그램이 배터리를 충전합니다.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;ES6 : class라는 키워드를 이용해서 정의할 수 있다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; class Laptop{
-    constructor(brand, name, color){
-  this.brand = brand;
-  this.name = name;
-  this.color = color;
-}
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Laptop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-recharge() {
+&lt;span class=&quot;nx&quot;&gt;recharge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 
-}
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;✔ 여기서 보이는 함수는 객체지향 프로그래밍에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;생성자(constructor) 함수&lt;/code&gt; 라고 부르며, 인스턴스가 만들어질 때 실행되는 코드이다. 생성자 함수는 return 값을 만들지 않는다.&lt;/p&gt;

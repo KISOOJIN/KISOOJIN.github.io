@@ -157,39 +157,39 @@
   <li>ES5 : 함수로 정의할 수 있다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function Laptop(brand, name, color){
-  this.brand = brand;
-  this.name = name;
-  this.color = color;
-}
-//Laptop이 class, function은 생성자 함수
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Laptop</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">brand</span> <span class="o">=</span> <span class="nx">brand</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//Laptop이 class, function은 생성자 함수</span>
 
-Laptop.prototype.recharge = function(){
-  //배터리 충전을 구현하는 코드
-}
-Laptop.prototype.operate = function(){
-  // 시스템을 실행하는 코드
-}
+<span class="nx">Laptop</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">recharge</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">//배터리 충전을 구현하는 코드</span>
+<span class="p">};</span>
+<span class="nx">Laptop</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">operate</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 시스템을 실행하는 코드</span>
+<span class="p">};</span>
 
-let gram = new Laptop('LG', 'gram', 'white');// 인스턴스
-gram.color; // 'white'
-gram.recharge(); //그램이 배터리를 충전합니다.
+<span class="kd">let</span> <span class="nx">gram</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Laptop</span><span class="p">(</span><span class="dl">"</span><span class="s2">LG</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">gram</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 인스턴스</span>
+<span class="nx">gram</span><span class="p">.</span><span class="nx">color</span><span class="p">;</span> <span class="c1">// 'white'</span>
+<span class="nx">gram</span><span class="p">.</span><span class="nx">recharge</span><span class="p">();</span> <span class="c1">//그램이 배터리를 충전합니다.</span>
 </code></pre></div></div>
 
 <ul>
   <li>ES6 : class라는 키워드를 이용해서 정의할 수 있다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> class Laptop{
-    constructor(brand, name, color){
-  this.brand = brand;
-  this.name = name;
-  this.color = color;
-}
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">class</span> <span class="nx">Laptop</span><span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">color</span><span class="p">){</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">brand</span> <span class="o">=</span> <span class="nx">brand</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+<span class="p">}</span>
 
-recharge() {
+<span class="nx">recharge</span><span class="p">()</span> <span class="p">{</span>
 
-}
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>✔ 여기서 보이는 함수는 객체지향 프로그래밍에서 <code class="language-plaintext highlighter-rouge">생성자(constructor) 함수</code> 라고 부르며, 인스턴스가 만들어질 때 실행되는 코드이다. 생성자 함수는 return 값을 만들지 않는다.</p>
