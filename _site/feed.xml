@@ -6,9 +6,87 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 21 Sep 2022 18:20:09 +0900</pubDate>
-    <lastBuildDate>Wed, 21 Sep 2022 18:20:09 +0900</lastBuildDate>
+    <pubDate>Thu, 22 Sep 2022 11:22:34 +0900</pubDate>
+    <lastBuildDate>Thu, 22 Sep 2022 11:22:34 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>프로토타입 체인(Prototype Chain)</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;프로토타입-체인&quot;&gt;프로토타입 체인&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;객체 지향 프로그래밍의 특성 중 &lt;strong&gt;상속&lt;/strong&gt;을 javascript에서 구현할 때 프로토타입 체인을 사용한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//예시&amp;lt;클래스 Human의 속성과 메소드&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kimcoing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Human&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;김코딩&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//속성&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;kimcoding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;kimcoding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//메서드&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;kimcoding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;eat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;kimcoding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//예시 &amp;lt;클래스 Student의 속성과 메서드&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;parkhacker&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;박해커&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//속성&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;parkhacker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;grade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//메서드&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;parkhacker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;learn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위의 예시에서 나타나는 박해커는 Student이다. 박해커는 학생이기전에 사람이기 때문에 부모 클래스인 Human의 속성을 물려받을 수 있고 메서드를 사용할 수 있다. 이것을 &lt;strong&gt;상속&lt;/strong&gt;이라고 말한다. 또한, 이러한 상속은 &lt;strong&gt;프로토타입 체인&lt;/strong&gt;이 있기에 가능하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;prototype&quot;&gt;.prototype&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;.prototype은 new로 인스턴스를 만들 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__proto__&lt;/code&gt;를 생성할 때 사용하는 객체다.&lt;/li&gt;
+  &lt;li&gt;함수 객체가 생성자로 사용될 때 이 함수를 통해 생성될 객체의 부모 역할을 하는 객체&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;__proto__&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.__proto__&lt;/code&gt;&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;인스턴스의 .&lt;strong&gt;proto&lt;/strong&gt;를 이용하면 &lt;strong&gt;부모 클래스의 프로토타입&lt;/strong&gt;, 부모의 부모 클래스의 프로토타입을 탐색할 수 있다. 자식에서 부모로 거슬러 올라간다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;object&quot;&gt;Object&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Object는 &lt;strong&gt;모든 클래스의 조상&lt;/strong&gt;이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/191640679-7d6a9d2a-40b1-4521-8adf-3af62f081795.png&quot; alt=&quot;스크린샷 2022-09-22 10-48-43&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/191641645-b1a161cc-f3bb-4114-a611-cbbac831c5b3.png&quot; alt=&quot;스크린샷 2022-09-22 10-58-10&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;공부 후 느낀점&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;아직 .prototype에 대한 개념이 확실히 잡히지 않았고 .prototype의 역할이 무엇인지 명확하게 설명할 자신이 없다. 이와 관련하여 명확하게 이해할 수 있도록 좀 더 공부를 해야겠다.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 Sep 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-09/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%EC%B2%B4%EC%9D%B8</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-09/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%EC%B2%B4%EC%9D%B8</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>프로토타입(Prototype)</title>
@@ -42,7 +120,7 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//Person이라는 새로운 객체가 생성됨&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kimcoding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;김코딩&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;female&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 여기서 Person이 .prototype&lt;/span&gt;
+
 
 &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kimcoding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__proto__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;
