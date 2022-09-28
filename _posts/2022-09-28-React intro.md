@@ -45,28 +45,26 @@ React에서 여러 데이터를 렌더링 할 때 map 메서드를 이용한다.
 
 킴코딩이 블로그 개발을 한다고 할 때를 예시로 들어보자!
 
-```JSX
-
+```jsx
 const posts = [
- { id: 1, title: "Hello World", content: "Welcome to learning React!" },
- { id: 2, title: "Installation", content: "You can install React via npm." },
+  { id: 1, title: "Hello World", content: "Welcome to learning React!" },
+  { id: 2, title: "Installation", content: "You can install React via npm." },
 ];
 
 function Blog() {
- return (
-   <div>
-     <div>
-       <h3>{posts[0].title}</h3>
-       <p>{posts[0].content}</p>
-     </div>
-     <div>
-       <h3>{posts[1].title}</h3>
-       <p>{posts[1].content}</p>
-     </div>
-   </div>
- );
+  return (
+    <div>
+      <div>
+        <h3>{posts[0].title}</h3>
+        <p>{posts[0].content}</p>
+      </div>
+      <div>
+        <h3>{posts[1].title}</h3>
+        <p>{posts[1].content}</p>
+      </div>
+    </div>
+  );
 }
-
 ```
 
 > 블로그 포스트가 2개일 경우에는 모든 데이터를 직접 작성(하드코딩)으로 가능하다.
@@ -75,11 +73,10 @@ function Blog() {
 
 <br/>
 
-```JSX
-
+```jsx
 function Blog() {
   const postToElement = (post) => (
-    <div key ={post.id}>
+    <div key={post.id}>
       <h3>{post.title}</h3>
       <p>{post.content}</p>
     </div>
@@ -89,8 +86,6 @@ function Blog() {
 
   return <div className="post-wrapper">{blogs}</div>;
 }
-
-
 ```
 
 <br/>
