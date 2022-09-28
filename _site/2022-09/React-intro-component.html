@@ -4,7 +4,7 @@
 
 
 <head>
-  <title>프로토타입 체인(Prototype Chain) | SOOJIN BLOG</title>
+  <title>React intro - component  | SOOJIN BLOG</title>
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/assets/css/main.css" media="all">
-  <link rel="canonical" href="http://localhost:4000/2022-09/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85-%EC%B2%B4%EC%9D%B8">
+  <link rel="canonical" href="http://localhost:4000/2022-09/React-intro-component">
   <link rel="alternate" type="application/rss+xml" title="SOOJIN BLOG"
     href="/feed.xml" />
 
@@ -107,87 +107,56 @@
     <div class="post">
   <div>
     
-    <p class="post_title">프로토타입 체인(Prototype Chain)</p>
+    <p class="post_title">React intro - component </p>
     
   </div>
   <div class="post_data">
     
-    <span class="post_date">Sep 22, 2022</span>
+    <span class="post_date">Sep 28, 2022</span>
     
     
     <span class="post_categories">
       &raquo; 
-      <a href="/categories/TIL">TIL</a>
+      <a href="/categories/React">React</a>
     </span>
     
   </div>
   <div class="post_content">
     <blockquote>
-  <h2 id="프로토타입-체인">프로토타입 체인</h2>
+  <h2 id="컴포넌트는-무엇인가">컴포넌트는 무엇인가?</h2>
 </blockquote>
 
-<p>객체 지향 프로그래밍의 특성 중 <strong>상속</strong>을 javascript에서 구현할 때 프로토타입 체인을 사용한다.</p>
+<p><br /></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//예시&lt;클래스 Human의 속성과 메소드&gt;</span>
+<p>하나의 기능 구현을 위한 여러 종류의 코드 묶음, UI를 구성하는 필수 요소</p>
 
-<span class="kd">let</span> <span class="nx">kimcoing</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Human</span><span class="p">(</span><span class="dl">"</span><span class="s2">김코딩</span><span class="dl">"</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+<p><br /></p>
 
-<span class="c1">//속성</span>
-<span class="nx">kimcoding</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
-<span class="nx">kimcoding</span><span class="p">.</span><span class="nx">gender</span><span class="p">;</span>
-<span class="c1">//메서드</span>
-<span class="nx">kimcoding</span><span class="p">.</span><span class="nx">eat</span><span class="p">();</span>
-<span class="nx">kimcoding</span><span class="p">.</span><span class="nx">sleep</span><span class="p">();</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Component</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">age</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//예시 &lt;클래스 Student의 속성과 메서드&gt;</span>
-
-<span class="kd">let</span> <span class="nx">parkhacker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Student</span><span class="p">(</span><span class="dl">"</span><span class="s2">박해커</span><span class="dl">"</span><span class="p">,</span> <span class="mi">22</span><span class="p">);</span>
-
-<span class="c1">//속성</span>
-<span class="nx">parkhacker</span><span class="p">.</span><span class="nx">grade</span><span class="p">;</span>
-<span class="c1">//메서드</span>
-<span class="nx">parkhacker</span><span class="p">.</span><span class="nx">learn</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>위의 예시에서 나타나는 박해커는 Student이다. 박해커는 학생이기전에 사람이기 때문에 부모 클래스인 Human의 속성을 물려받을 수 있고 메서드를 사용할 수 있다. 이것을 <strong>상속</strong>이라고 말한다. 또한, 이러한 상속은 <strong>프로토타입 체인</strong>이 있기에 가능하다.</p>
-
-<blockquote>
-  <h2 id="prototype">.prototype</h2>
-</blockquote>
-
-<ul>
-  <li>.prototype은 new로 인스턴스를 만들 때 <code class="language-plaintext highlighter-rouge">__proto__</code>를 생성할 때 사용하는 객체다.</li>
-  <li>함수 객체가 생성자로 사용될 때 이 함수를 통해 생성될 객체의 부모 역할을 하는 객체</li>
-</ul>
-
-<blockquote>
-  <h2 id="__proto__"><code class="language-plaintext highlighter-rouge">.__proto__</code></h2>
-</blockquote>
-
-<p>인스턴스의 .<strong>proto</strong>를 이용하면 <strong>부모 클래스의 프로토타입</strong>, 부모의 부모 클래스의 프로토타입을 탐색할 수 있다. 자식에서 부모로 거슬러 올라간다.</p>
-
 <p><br /></p>
 
+<p><img src="https://user-images.githubusercontent.com/111376707/192799197-2e5cfd3a-126b-4448-acfa-e3ca130e2d12.png" alt="스크린샷 2022-09-28 23-00-55" /></p>
+
 <blockquote>
-  <h2 id="object">Object</h2>
+  <p>리액트를 이용하면, 각자 독립적인 기능을 가지며 UI의 한 부분을 담당하기도 하는 컴포넌트를 여러 개 만들고 조합하여 애플리케이션을 만들 수 있다.</p>
 </blockquote>
 
 <p><br /></p>
 
-<p>Object는 <strong>모든 클래스의 조상</strong>이다.</p>
-
-<p><br /></p>
-
-<p><img src="https://user-images.githubusercontent.com/111376707/191640679-7d6a9d2a-40b1-4521-8adf-3af62f081795.png" alt="스크린샷 2022-09-22 10-48-43" /></p>
-
-<p><img src="https://user-images.githubusercontent.com/111376707/191641645-b1a161cc-f3bb-4114-a611-cbbac831c5b3.png" alt="스크린샷 2022-09-22 10-58-10" /></p>
+<p><img src="https://user-images.githubusercontent.com/111376707/192800643-a53cb8be-6821-4506-b087-6224d9912b3d.png" alt="스크린샷 2022-09-28 23-06-49" /></p>
 
 <blockquote>
-  <p><strong>공부 후 느낀점</strong></p>
+  <p>모든 리액트 애플리케이션은 최소 한 개의 컴포넌트를 가지고 있으며, 이 컴포넌트는 애플리케이션 내부적으로는 근원(root)이 되는 역할을 한다. 이 최상위 컴포넌트는 근원의 역할을 하므로 다른 자식 컴포넌트를 가질 수 있으며, 이 계층적 구조(hierarchy)를 트리 구조로 형상화할 수 있다.</p>
 </blockquote>
-
-<p>아직 .prototype에 대한 개념이 확실히 잡히지 않았고 .prototype의 역할이 무엇인지 명확하게 설명할 자신이 없다. 이와 관련하여 명확하게 이해할 수 있도록 좀 더 공부를 해야겠다.</p>
 
   </div>
 
