@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Oct 2022 15:33:40 +0900</pubDate>
-    <lastBuildDate>Sun, 09 Oct 2022 15:33:40 +0900</lastBuildDate>
+    <pubDate>Sun, 09 Oct 2022 15:47:36 +0900</pubDate>
+    <lastBuildDate>Sun, 09 Oct 2022 15:47:36 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -15,6 +15,11 @@
         <description>&lt;blockquote&gt;
   &lt;h2 id=&quot;parseint-vs-mathfloor&quot;&gt;parseInt() vs Math.floor()&lt;/h2&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;백준 문제를 풀다가 parseInt를 사용했는데 런타임오류로 Math.floor()를 대신 사용해서 해결할 수 있었고 parseInt()와 Math.floor()의 차이점을 알고 싶어서 구글링하다가 관련된 블로그를 확인하여 궁금증을 풀 수 있었다.
+밑에 블로그에서 소개하는 사이트에서 직접 어떤 메소드가 더 빠른지 눈으로 확인할 수 있어서 더욱 도움이 되었다!😊&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -44,7 +49,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt; [https://developer-alle.tistory.com/393]&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer-alle.tistory.com/393&quot;&gt;참고한 블로그 및 사이트&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 09 Oct 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/2022-10/parseInt-vs-Math.floor</link>

@@ -12,7 +12,12 @@ date: 2022-10-09
 
 > ## parseInt() vs Math.floor()
 
-<br>
+<br/>
+
+백준 문제를 풀다가 parseInt를 사용했는데 런타임오류로 Math.floor()를 대신 사용해서 해결할 수 있었고 parseInt()와 Math.floor()의 차이점을 알고 싶어서 구글링하다가 관련된 블로그를 확인하여 궁금증을 풀 수 있었다.
+밑에 블로그에서 소개하는 사이트에서 직접 어떤 메소드가 더 빠른지 눈으로 확인할 수 있어서 더욱 도움이 되었다!😊
+
+<br/>
 
 JavaScript로 positive decimal number를 내림할 때 Math.floor랑 parseInt 를 사용할 수 있는데, `Math.floor`가 parseInt보다 빠르다.
 
@@ -40,4 +45,4 @@ JavaScript로 positive decimal number를 내림할 때 Math.floor랑 parseInt �
 
 <br/>
 
-**참고** [https://developer-alle.tistory.com/393]
+[참고한 블로그 및 사이트](https://developer-alle.tistory.com/393)
