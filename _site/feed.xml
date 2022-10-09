@@ -6,9 +6,54 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 06 Oct 2022 16:36:02 +0900</pubDate>
-    <lastBuildDate>Thu, 06 Oct 2022 16:36:02 +0900</lastBuildDate>
+    <pubDate>Sun, 09 Oct 2022 15:33:40 +0900</pubDate>
+    <lastBuildDate>Sun, 09 Oct 2022 15:33:40 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>parseInt vs Math.floor</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;parseint-vs-mathfloor&quot;&gt;parseInt() vs Math.floor()&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript로 positive decimal number를 내림할 때 Math.floor랑 parseInt 를 사용할 수 있는데, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Math.floor&lt;/code&gt;가 parseInt보다 빠르다.&lt;/p&gt;
+
+&lt;p&gt;그리고 Math.floor 보다 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~~ 라는 연산자&lt;/code&gt;를 사용하면 더 빠르다.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;참고로 ~ tilde 연산자는 Bitwise NOT 이라는 자바스크립트 연산자이고 두개 연달아서 붙여 양수 앞에서 사용하면, Math.floor와 동일한 효과가 있다.
+~연산자를 음수 앞에 사용하면 -(n+1)의 값으로 변환된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;~~&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;~~&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;~~&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.6&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt; [https://developer-alle.tistory.com/393]&lt;/p&gt;
+</description>
+        <pubDate>Sun, 09 Oct 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-10/parseInt-vs-Math.floor</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-10/parseInt-vs-Math.floor</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>REST API</title>

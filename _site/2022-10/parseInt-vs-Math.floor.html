@@ -4,7 +4,7 @@
 
 
 <head>
-  <title>프로토타입(Prototype) | SOOJIN BLOG</title>
+  <title>parseInt vs Math.floor | SOOJIN BLOG</title>
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/assets/css/main.css" media="all">
-  <link rel="canonical" href="http://localhost:4000/2022-09/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85">
+  <link rel="canonical" href="http://localhost:4000/2022-10/parseInt-vs-Math.floor">
   <link rel="alternate" type="application/rss+xml" title="SOOJIN BLOG"
     href="/feed.xml" />
 
@@ -107,12 +107,12 @@
     <div class="post">
   <div>
     
-    <p class="post_title">프로토타입(Prototype)</p>
+    <p class="post_title">parseInt vs Math.floor</p>
     
   </div>
   <div class="post_data">
     
-    <span class="post_date">Sep 21, 2022</span>
+    <span class="post_date">Oct 9, 2022</span>
     
     
     <span class="post_categories">
@@ -123,51 +123,38 @@
   </div>
   <div class="post_content">
     <blockquote>
-  <h2 id="프로토타입prototype">프로토타입(Prototype)</h2>
+  <h2 id="parseint-vs-mathfloor">parseInt() vs Math.floor()</h2>
 </blockquote>
-
-<p>프로토타입은 <strong>원형 객체</strong>를 의미한다.
-모든 객체는 그들의 프로토타입으로부터 속성(property)와 메소드를 상속받는데, 이때 상속되는 정보를 제공하는 객체를 <code class="language-plaintext highlighter-rouge">프로토타입(prototype)</code>이라고 한다.</p>
 
 <p><br /></p>
 
+<p>JavaScript로 positive decimal number를 내림할 때 Math.floor랑 parseInt 를 사용할 수 있는데, <code class="language-plaintext highlighter-rouge">Math.floor</code>가 parseInt보다 빠르다.</p>
+
+<p>그리고 Math.floor 보다 <code class="language-plaintext highlighter-rouge">~~ 라는 연산자</code>를 사용하면 더 빠르다.
+<br /></p>
+
 <blockquote>
-  <h2 id="prototype과-__proto__-의-차이">.prototype과 <code class="language-plaintext highlighter-rouge">__proto__</code> 의 차이</h2>
+  <p>참고로 ~ tilde 연산자는 Bitwise NOT 이라는 자바스크립트 연산자이고 두개 연달아서 붙여 양수 앞에서 사용하면, Math.floor와 동일한 효과가 있다.
+~연산자를 음수 앞에 사용하면 -(n+1)의 값으로 변환된다.</p>
 </blockquote>
 
-<ul>
-  <li>.prototype은 new로 인스턴스를 만들 때 <code class="language-plaintext highlighter-rouge">__proto__</code>를 생성할 때 사용하는 객체다.</li>
-  <li><code class="language-plaintext highlighter-rouge">__proto__</code>는 메서드 등을 찾는데 사용되는 실제 객체이다.</li>
-</ul>
+<p><br /></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">gender</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">gender</span> <span class="o">=</span> <span class="nx">gender</span><span class="p">;</span>
-
-
-<span class="nx">sleep</span><span class="p">(){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">은 잠에 들었습니다`</span><span class="p">);</span>
- <span class="p">}</span>
-<span class="p">}</span><span class="c1">//Person이라는 새로운 객체가 생성됨</span>
-
-<span class="kd">let</span> <span class="nx">kimcoding</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">'</span><span class="s1">김코딩</span><span class="dl">'</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="dl">'</span><span class="s1">female</span><span class="dl">'</span><span class="p">);</span>
-
-
-<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">===</span> <span class="nx">Person</span><span class="p">;</span><span class="c1">//true</span>
-<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">===</span> <span class="nx">kimcoding</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">;</span><span class="c1">//true</span>
-<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sleep</span> <span class="o">===</span> <span class="nx">kimcoding</span><span class="p">.</span><span class="nx">sleep</span><span class="p">;</span><span class="c1">//true</span>
-
-
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~~</span><span class="mf">2.2</span> <span class="o">===</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// true</span>
+<span class="o">~~</span><span class="mf">3.5</span> <span class="o">===</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// true</span>
+<span class="o">~~</span><span class="mf">4.6</span> <span class="o">===</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// true</span>
 </code></pre></div></div>
 
 <p><br /></p>
 
-<blockquote>
-  <h2 id="클래스-인스턴스-프로토타입의-관계">클래스, 인스턴스, 프로토타입의 관계</h2>
-</blockquote>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// true</span>
+<span class="o">~</span><span class="mi">2</span> <span class="o">===</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span> <span class="c1">// true</span>
+<span class="o">~</span><span class="mi">3</span> <span class="o">===</span> <span class="o">-</span><span class="mi">4</span><span class="p">;</span> <span class="c1">// true</span>
+</code></pre></div></div>
 
-<p><img src="https://user-images.githubusercontent.com/111376707/191464092-7bf2a707-d37c-4d86-9088-11a8d5dbee5d.png" alt="example" /></p>
+<p><br /></p>
+
+<p><strong>참고</strong> [https://developer-alle.tistory.com/393]</p>
 
   </div>
 
