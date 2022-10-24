@@ -6,9 +6,140 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Oct 2022 15:47:36 +0900</pubDate>
-    <lastBuildDate>Sun, 09 Oct 2022 15:47:36 +0900</lastBuildDate>
+    <pubDate>Mon, 24 Oct 2022 17:44:59 +0900</pubDate>
+    <lastBuildDate>Mon, 24 Oct 2022 17:44:59 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>UI/UX</title>
+        <description>&lt;blockquote&gt;
+  &lt;h2 id=&quot;ui-는-무엇인가&quot;&gt;UI 는 무엇인가?&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;UI(User Interface, 사용자 인터페이스)는 사람들이 컴퓨터와 상호 작용하는 시스템을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h3&gt; UI 디자인 패턴&lt;h3&gt;
+&lt;/h3&gt;&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;UI 디자인 패턴은 프로그래밍 시 자주 반복되어 나타나는 문제점을 해결하고자, 과거의 다른 사람이 해결한 결과물을 재사용하기 좋은 형태로 만든 패턴을 말한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;모달(Modal)&lt;/li&gt;
+  &lt;li&gt;토글(Toggle)&lt;/li&gt;
+  &lt;li&gt;탭(Tab)&lt;/li&gt;
+  &lt;li&gt;태그(Tag)&lt;/li&gt;
+  &lt;li&gt;자동완성(Autocomplete)&lt;/li&gt;
+  &lt;li&gt;드롭다운(Dropdown)&lt;/li&gt;
+  &lt;li&gt;아코디언(Accordion)&lt;/li&gt;
+  &lt;li&gt;캐러셀(Carousel)&lt;/li&gt;
+  &lt;li&gt;페이지네이션(Pagination)&lt;/li&gt;
+  &lt;li&gt;무한 스크롤 ( Infinite Scroll, Continuous Scroll)&lt;/li&gt;
+  &lt;li&gt;GNB(Global Navigation Bar), LNB(Local Navigation Bar)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h3&gt;UI 레이아웃&lt;/h3&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;그리드 시스템(Grid System)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;그리드 시스템은 질서 있는 구조의 UI를 구성할 수 있도록 도와주는 시스템이다. 그리드는 수직, 수평으로 분할된 격자무늬를 뜻하며, 화면을 격자로 나눈 다음 그 격자에 맞춰 콘텐츠를 배치하는 방법이다.&lt;/p&gt;
+
+&lt;p&gt;웹 디자인 분야에서는 화면을 세로로 몇개의 영역으로 나눌 것인가에 초점을 맞춘 컬럼 &lt;strong&gt;그리드 시스템(Column Grid System)&lt;/strong&gt; 을 사용하며, Margin, Column, Gutter라는 세 가지 요소로 구성된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/197482295-2f2ea66c-2e73-43c8-977e-b6aa56460ab7.png&quot; alt=&quot;스크린샷 2022-10-24 17-28-05&quot; /&gt;&lt;/p&gt;
+
+&lt;h4&gt; 1. Margin &lt;/h4&gt;
+
+&lt;p&gt;Margin은 화면 양쪽의 여백을 의미한다.&lt;/p&gt;
+
+&lt;h4&gt; 2. Column&lt;/h4&gt;
+
+&lt;p&gt;Column은 콘텐츠가 위치하게 될, 세로로 나누어진 영역으로, 컬럼 개수를 임의로 나눌 수도 있지만, 표준적으로 휴대폰에서 4개, 태블릿에서 8개, PC에서는 12개의 컬럼으로 나눈다.
+화면 크기의 구분선을 break point라고 하며, 만들고자 하는 UI가 어디에 속하는지 파악하고 컬럼 개수를 정하면 된다.&lt;/p&gt;
+
+&lt;h4&gt; 3. Gutter&lt;/h4&gt;
+
+&lt;p&gt;Gutter는 Column 사이의 공간으로, 콘텐츠를 구분하는데 도움을 준다. Gutter의 간격이 좁을수록 콘텐츠들이 연관성 있어 보이고, 넓을수록 각 콘텐츠가 독립적인 느낌을 준다.&lt;/p&gt;
+
+&lt;p&gt;다만 너무 좁거나, 너무 넓게 설정하지 않도록 주의해야 하며 Gutter는 아무리 넓어도 컬럼 너비보다는 작게 설정해야한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;ux-는-무엇인가&quot;&gt;UX 는 무엇인가?&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;UX(User Experience, 사용자 경험)는 사용자가 어떤 시스템, 제품, 서비스를 직•간접적으로 이용하면서 느끼고 생각하는 총체적 경험을 말한다. 제품, 서비스 그 자체에 대한 경험은 물론, 홍보, 접근성, 사후 처리 등 직간접적으로 관련된 모든 경험을 사용자 경험이라고 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3&gt;좋은 UX를 만드는 요소&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;좋은 UX를 만들기 위해 고려해야 할 요소는 다음과 같다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/197483089-cc6896dc-1b74-4337-bf4b-837e8aadbc01.png&quot; alt=&quot;스크린샷 2022-10-24 17-31-36&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;유용성(Useful) : 사용 가능한가?&lt;/li&gt;
+  &lt;li&gt;사용성(Usable) : 사용하기 쉬운가?&lt;/li&gt;
+  &lt;li&gt;매력성(Desirable) : 매력적인가?&lt;/li&gt;
+  &lt;li&gt;신뢰성(Credible) : 신뢰할 수 있는가?&lt;/li&gt;
+  &lt;li&gt;접근성(Accessible) : 접근하기 쉬운가?&lt;/li&gt;
+  &lt;li&gt;검색 가능성(Findable) : 찾기 쉬운가?&lt;/li&gt;
+  &lt;li&gt;가치성(Valuable) : 가치를 제공하는가?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3&gt;User Flow&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/197484546-90c6b973-8e25-4d41-99ca-f2901e085851.png&quot; alt=&quot;스크린샷 2022-10-24 17-38-46&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;사용자 흐름(user flow)은 사용자가 제품에 진입한 시점을 시작으로 취할 수 있는 모든 행동을 뜻하며, 다이어그램을 그려서 정리한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4&gt;User Flow 다이어그램 작성법&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;직사각형 : 사용자가 보게 될 화면 ( ex. 회원 가입 페이지, 로그인 페이지 … )&lt;/li&gt;
+  &lt;li&gt;다이아몬드 : 사용자가 취하게 될 행동 ( ex. 로그인, 버튼 클릭, 업로드 … )&lt;/li&gt;
+  &lt;li&gt;화살표 : 직사각형(화면)과 다이아몬드(행동)를 연결시켜주는 화살표&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;User flow 다이어그램을 그리면서 사용자 흐름을 빈틈 없이, 보다 더 편리하게 다듬어 나가는 과정을 거치면 UX를 개선할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;ui와-ux의-관계&quot;&gt;UI와 UX의 관계&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/197484704-dfbb74b4-5796-40cf-b11d-663427b684c0.png&quot; alt=&quot;스크린샷 2022-10-24 17-12-14&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;UX는 UI를 포함한다. 또한 UI와 UX는 서로 다르지만 떼려야 뗄 수 없는 관계이며, 서로를 보완하는 역할을 한다. UX가 좋지 않은 곳을 찾아냄으로써 UI 개선점을 찾아낼 수 있고, UI를 개선함으로써 UX가 좋아지기도 한다. 이렇게 UX와 UI는 서로를 계속해서 발전시킬 수 있다.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 24 Oct 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-10/UI-UX</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-10/UI-UX</guid>
+        
+        
+        <category>UI-UX</category>
+        
+      </item>
     
       <item>
         <title>parseInt vs Math.floor</title>
