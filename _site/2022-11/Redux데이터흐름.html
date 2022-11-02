@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+  <title>Redux의 데이터 흐름 | SOOJIN BLOG</title>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="SOOJIN">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/assets/css/main.css" media="all">
+  <link rel="canonical" href="http://localhost:4000/2022-11/Redux%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%9D%90%EB%A6%84">
+  <link rel="alternate" type="application/rss+xml" title="SOOJIN BLOG"
+    href="/feed.xml" />
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i" rel="stylesheet">
+</head>
+
+<body>
+  <div class="content">
+
+    <header class="header">
+
+  <div class="header_content">
+    <label class="theme_changer">
+      <input theme_toggle type="checkbox">
+      <div class="button"></div>
+    </label>
+    <a class="header_circle" href="/">
+      <img src="/assets/img/cat.jpg" alt="catbook">
+    </a>
+    <span class="header_name">SOOJIN</span>
+    <span class="header_job">배운 것을 기록하는 공간</span>
+    <span class="header_mes"></span>
+
+    <nav class="nav">
+      
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/writing" id="aa">writing
+            (1)</a>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/TIL" id="aa">TIL
+            (8)</a>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/React" id="aa">React
+            (2)</a>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/UI-UX" id="aa">UI-UX
+            (1)</a>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/Redux" id="aa">Redux
+            (1)</a>
+        </li>
+      </ul>
+      
+    </nav>
+  </div>
+
+</header>
+
+
+
+    <nav class="mobile_menu">
+
+  <ul class="nav_list">
+    
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/writing" id="aa">writing (1)</a>
+    </li>
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/TIL" id="aa">TIL (8)</a>
+    </li>
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/React" id="aa">React (2)</a>
+    </li>
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/UI-UX" id="aa">UI-UX (1)</a>
+    </li>
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/Redux" id="aa">Redux (1)</a>
+    </li>
+    
+  </ul>
+
+</nav>
+    
+    <main class="main">
+
+    <div class="post">
+  <div>
+    
+    <p class="post_title">Redux의 데이터 흐름</p>
+    
+  </div>
+  <div class="post_data">
+    
+    <span class="post_date">Nov 2, 2022</span>
+    
+    
+    <span class="post_categories">
+      &raquo; 
+      <a href="/categories/Redux">Redux</a>
+    </span>
+    
+  </div>
+  <div class="post_content">
+    <h2 id="redux-데이터-흐름">Redux 데이터 흐름</h2>
+
+<p>아래 사진과 같은 구조의 React 애플리케이션이 있다고 가정할 때, 이 애플리케이션은 컴포넌트3, 컴포넌트6에서만 사용되는 상태가 있다. 그렇다면 이 상태를 어느 컴포넌트에 위치시켜야 할까? 기존에 배운 React의 데이터 흐름에 따르면, 최상위 컴포넌트에 위치시키는 것이 적절하다.</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>React에서의 데이터 흐름</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/111376707/199399950-fd5684d8-0ac0-400c-a097-a606c8884fb1.png" alt="스크린샷 2022-11-02 13-39-11" /></p>
+
+<p>하지만 이런 상태 배치는 다음과 같은 이유로 다소 비효율적이라고 느껴질 수 있다.</p>
+
+<ol>
+  <li>해당 상태를 직접 사용하지 않는 최상위 컴포넌트, 컴포넌트1, 컴포넌트2도 상태 데이터를 가짐</li>
+  <li>상태 끌어올리기, Props 내려주기를 여러 번 거쳐야 함</li>
+  <li>애플리케이션이 복잡해질수록 데이터 흐름도 복잡해짐</li>
+  <li>컴포넌트 구조가 바뀐다면, 지금의 데이터 흐름을 완전히 바꿔야 할 수도 있음</li>
+</ol>
+
+<p><br /></p>
+
+<blockquote>
+  <p>Redux를 사용했을 때의 데이터 흐름</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/111376707/199400054-c61644f9-994a-4b71-95ac-b869dbb67d78.png" alt="스크린샷 2022-11-02 13-39-20" /></p>
+
+<p>상태 관리 라이브러리인 Redux는, 전역 상태를 관리할 수 있는 저장소인 Store를 제공함으로써 이 문제들을 해결해준다. 기존 React에서의 데이터 흐름과, Redux를 사용했을 때의 데이터 흐름을 비교해보면, Redux를 사용했을 때의 데이터 흐름이 보다 더 깔끔하다.</p>
+
+<h2 id="redux의-구조">Redux의 구조</h2>
+
+<p><img src="https://user-images.githubusercontent.com/111376707/199402205-38e4e255-68e7-4ab2-a9e0-9ee226c63741.png" alt="스크린샷 2022-11-02 14-00-35" /></p>
+
+<p><br /></p>
+
+<p>Redux는 다음과 같은 순서로 상태를 관리한다.</p>
+
+<p>상태가 변경되어야 하는 이벤트가 발생하면, 변경될 상태에 대한 정보가 담긴 Action 객체가 생성된다.
+이 Action 객체는 Dispatch 함수의 인자로 전달되며, Dispatch 함수는 Action 객체를 Reducer 함수로 전달해준다.
+Reducer 함수는 Action 객체의 값을 확인하고, 그 값에 따라 전역 상태 저장소 Store의 상태를 변경한다.
+상태가 변경되면, React는 화면을 다시 렌더링 한다.</p>
+
+<p><br /></p>
+
+<blockquote>
+  <p>즉, Redux에서는 <strong>Action → Dispatch → Reducer → Store</strong> 순서로 데이터가 단방향으로 흐르게 된다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3>Store</h3>
+<p>Store는 상태가 관리되는 오직 하나뿐인 저장소의 역할을 한다. Redux 앱의 state가 저장되어 있는 공간을 말한다. createStore 메서드를 활용해 Reducer를 연결해서 Store를 생성할 수 있다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">createStore</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">redux</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span><span class="nx">rootReducer</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3>Reducer</h3>
+
+<p>Reducer는 Dispatch에게서 전달받은 Action 객체의 type 값에 따라서 상태를 변경시키는 함수이다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="c1">// Reducer를 생성할 때에는 초기 상태를 인자로 요구</span>
+<span class="kd">const</span> <span class="nx">counterReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">count</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Action 객체의 type 값에 따라 분기하는 switch 조건문</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//action === 'INCREASE'일 경우</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">INCREASE</span><span class="dl">"</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// action === 'DECREASE'일 경우</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">DECREASE</span><span class="dl">"</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// action === 'SET_NUMBER'일 경우</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">SET_NUMBER</span><span class="dl">"</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
+
+    <span class="c1">// 해당 되는 경우가 없을 땐 기존 상태를 그대로 리턴</span>
+    <span class="nl">default</span><span class="p">:</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="c1">// Reducer가 리턴하는 값이 새로운 상태가 된다.</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<blockquote>
+  <p>이 때, Reducer는 순수함수여야 한다. 외부 요인으로 인해 엉뚱한 값으로 상태가 변경되는 일을 방지하기 위함이다.</p>
+</blockquote>
+
+<p><br />
+만약 여러 개의 Reducer를 사용하는 경우, Redux의 combineReducers 메서드를 사용해서 하나의 Reducer로 합쳐줄 수 있다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">combineReducers</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">redux</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">rootReducer</span> <span class="o">=</span> <span class="nx">combineReducers</span><span class="p">({</span>
+  <span class="nx">counterReducer</span><span class="p">,</span>
+  <span class="nx">anyReducer</span><span class="p">,</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3>Action</h3>
+
+<p>Action은 어떤 액션을 취할 것인지 정의해 놓은 객체로, 다음과 같은 형식으로 구성된다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// payload가 필요 없는 경우</span>
+<span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">INCREASE</span><span class="dl">'</span> <span class="p">}</span>
+
+<span class="c1">// payload가 필요한 경우</span>
+<span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">SET_NUMBER</span><span class="dl">'</span><span class="p">,</span> <span class="na">payload</span><span class="p">:</span> <span class="mi">5</span> <span class="p">}</span>
+
+</code></pre></div></div>
+
+<p><strong>type</strong> 은 필수로 지정을 해 주어야 한다. 해당 Action 객체가 어떤 동작을 하는지 명시해주는 역할을 하기 때문이며, 대문자와 Snake Case로 작성한다. 필요에 따라 payload 를 작성해 구체적인 값을 전달한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// payload가 필요 없는 경우</span>
+<span class="kd">const</span> <span class="nx">increase</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">INCREASE</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+<span class="c1">// payload가 필요한 경우</span>
+<span class="kd">const</span> <span class="nx">setNumber</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SET_NUMBER</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">payload</span><span class="p">:</span> <span class="nx">num</span><span class="p">,</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>보통 Action을 직접 작성하기보다는 Action 객체를 생성하는 함수를 만들어 사용하는 경우가 많으며, 이러한 함수를 <strong>액션 생성자(Action Creator)</strong> 라고도 한다.</p>
+
+<p><br /></p>
+
+<h3>Dispatch</h3>
+
+<p>Dispatch는 Reducer로 Action을 전달해주는 함수이다. Dispatch의 전달인자로 Action 객체가 전달되며, Action 객체를 전달받은 Dispatch 함수는 Reducer를 호출한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Action 객체를 직접 작성하는 경우</span>
+<span class="nx">dispatch</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">INCREASE</span><span class="dl">"</span> <span class="p">});</span>
+<span class="nx">dispatch</span><span class="p">({</span> <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">SET_NUMBER</span><span class="dl">"</span><span class="p">,</span> <span class="na">payload</span><span class="p">:</span> <span class="mi">5</span> <span class="p">});</span>
+
+<span class="c1">// 액션 생성자(Action Creator)를 사용하는 경우</span>
+<span class="nx">dispatch</span><span class="p">(</span><span class="nx">increase</span><span class="p">());</span>
+<span class="nx">dispatch</span><span class="p">(</span><span class="nx">setNumber</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h4>useDispatch()</h4>
+
+<p>useDispatch() 는 Action 객체를 Reducer로 전달해 주는 Dispatch 함수를 반환하는 메서드이다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useDispatch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nx">useDispatch</span><span class="p">();</span>
+<span class="nx">dispatch</span><span class="p">(</span><span class="nx">increase</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">);</span> <span class="c1">// 2</span>
+
+<span class="nx">dispatch</span><span class="p">(</span><span class="nx">setNumber</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">);</span> <span class="c1">// 5</span>
+</code></pre></div></div>
+
+<h4>useSelector()</h4>
+
+<p>useSelector()는 컴포넌트와 state를 연결하여 Redux의 state에 접근할 수 있게 해주는 메서드이다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Redux Hooks 메서드는 'redux'가 아니라 'react-redux'에서 불러온다.</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useSelector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-redux</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">counter</span> <span class="o">=</span> <span class="nx">useSelector</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counter</span><span class="p">);</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="redux의-세가지-원칙">Redux의 세가지 원칙</h2>
+
+<p><strong>1. Single source of truth</strong></p>
+
+<p>동일한 데이터는 항상 같은 곳에서 가지고 와야 한다는 의미다. 즉, Redux에는 데이터를 저장하는 Store라는 단 하나뿐인 공간이 있음과 연결되는 원칙이다.</p>
+
+<p><strong>2. State is read-only</strong></p>
+
+<p>상태는 읽기 전용이라는 뜻으로, React에서 상태갱신함수로만 상태를 변경할 수 있었던 것처럼, Redux의 상태도 직접 변경할 수 없음을 의미한다. 즉, Action 객체가 있어야만 상태를 변경할 수 있음과 연결되는 원칙이다.</p>
+
+<p><strong>3. Changes are made with pure functions</strong></p>
+
+<p>변경은 순수함수로만 가능하다는 뜻으로, 상태가 엉뚱한 값으로 변경되는 일이 없도록 순수함수로 작성되어야하는 Reducer와 연결되는 원칙이다.</p>
+
+  </div>
+
+
+  
+  <div class="post_comment">
+
+    
+
+    
+
+
+  </div>
+  
+
+</div>
+
+
+    </main>
+
+  </div>
+
+  <footer class="footer">
+  <div>
+    &copy; 2022 SOOJIN.
+    Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>.
+    Get this theme
+    <a href="https://github.com/starry99/catbook" target="_blank">here</a>.
+  </div>
+</footer>
+
+  <!-- js from https://codepen.io/MrGrigri/pen/XQmWBv -->
+
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+    const themePreference = () => {
+        const hasLocalStorage = localStorage.getItem('theme');
+        let supports = false;
+        let theme = undefined;
+
+        if (hasLocalStorage === 'light') {
+            theme = 'light';
+        }
+        if (hasLocalStorage === 'dark') {
+            theme = 'dark';
+        }
+
+        if (window.matchMedia(`(prefers_color: dark)`).matches) {
+            theme = hasLocalStorage ? hasLocalStorage : 'dark';
+            supports = true;
+        };
+        if (window.matchMedia(`(prefers_color: light)`).matches) {
+            theme = hasLocalStorage ? hasLocalStorage : 'light';
+            supports = true;
+        };
+        if (window.matchMedia(`(prefers_color: no-preference)`).matches) {
+            theme = hasLocalStorage ? hasLocalStorage : 'none';
+            supports = true;
+        };
+
+        return {
+            supports,
+            theme
+        };
+    }
+
+    document.addEventListener('DOMContentLoaded', e => {
+        console.clear();
+
+        const userThemePreference = themePreference();
+        const toggle = document.querySelector('[theme_toggle]');
+        const html = document.documentElement;
+
+        const setTheme = () => {
+            switch (userThemePreference.theme) {
+                case 'dark':
+                    toggle.checked = true;
+                    html.classList.add('dark');
+                    html.classList.remove('light');
+                    break;
+                case 'light':
+                    toggle.checked = false;
+                    html.classList.remove('dark');
+                    html.classList.add('light');
+                    break;
+            }
+        }
+        setTheme();
+        toggle.addEventListener('click', e => {
+            if (toggle.checked) {
+                html.classList.add('dark');
+                html.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            }
+        }, false);
+    }, false);
+// @license-end
+</script>
+
+</body>
+</html>
