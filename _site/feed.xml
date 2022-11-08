@@ -6,9 +6,198 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Nov 2022 14:22:53 +0900</pubDate>
-    <lastBuildDate>Wed, 02 Nov 2022 14:22:53 +0900</lastBuildDate>
+    <pubDate>Tue, 08 Nov 2022 16:57:07 +0900</pubDate>
+    <lastBuildDate>Tue, 08 Nov 2022 16:57:07 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>웹 표준</title>
+        <description>&lt;h1&gt; 웹 표준 &lt;/h1&gt;
+
+&lt;p&gt;웹 표준이란?&lt;/p&gt;
+
+&lt;p&gt;W3C(World Wide Web Consortium)에서 권고하는 ‘웹에서 표준적으로 사용되는 기술이나 규칙’으로, 사용자가 어떠하니 운영체제나 브라우저를 사용하더라도 웹페이지가 동일하게 보이고 정상적으로 작동할 수 있도록 하는 웹 페이지 제작 기법을 담고 있다. 웹 개발에 사용되는 언어인 HTML, CSS, JavaScript 등의 기술을 다룬다. 이 세 기술은 화면의 구조, 표현, 동작을 각각 담당한다.&lt;/p&gt;
+
+&lt;p&gt;크롬, 엣지, 사파리, 오페라, 파이어폭스 등 최신 웹 브라우저들은 모두 웹 표준을 지원한다. 따라서 웹 표준에 맞추어 웹 페이지를 작성하면 어떤 브라우저를 사용하든 동일한 결과물을 얻을 수 있다. 앞서 언급 된 브라우저 호환 때문에 화면이 제대로 표시되지 않거나 기능이 작동하지 않는 등의 문제 상황을 방지할 수 있다. 따라서 가능한 웹 표준을 준수한 웹 페이지를 개발하기 위해 노력하는 것이 좋다.&lt;/p&gt;
+
+&lt;h2&gt; 웹 표준의 장점&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;1. 유지 보수의 용이성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;웹 표준으로 HTML, CSS, JavaScript 등의 사용 방법을 정리하기 이전에는 구조, 표현, 동작이 뒤섞인 코드도 많았습니다. 그러다보니 어느 한 부분을 수정하려면 전부 뜯어고쳐야 할 때도 있었습니다. 하지만 각 영역이 분리되면서 유지 보수가 용이해졌고, 코드가 경량화되면서 트래픽 비용이 감소하는 효과도 생겼습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. 웹 호환성 확보&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;웹 사이트가 특정 운영체제나 브라우저에 종속적이라면 그 외 환경에서는 정상적으로 사용이 불가능한 문제점이 발생합니다. 하지만 웹 표준을 준수하여 웹 사이트를 제작하면 웹 브라우저의 종류나 버전, 운영 체제나 사용 기기 종류에 상관없이 항상 동일한 결과가 나오도록 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. 검색 효율성 증대&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;웹 표준에 맞춰 웹 사이트를 작성하는 것 만으로도 검색 엔진에서 더 높은 우선 순위로 노출될 수 있다. 적절한 HTML 요소의 사용, 웹 페이지에 대한 정확한 정보 작성 등 검색 효율성과 관련된 내용도 웹 표준에서 다루고 있기 때문이다. 홍보를 위한 비용을 들이지 않아도 검색의 효율성을 높일 수 있게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4. 웹 접근성 향상&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;브라우저의 종류, 운영 체제의 종류, 기기의 종류 등 웹에 접근할 수 있는 환경과 웹을 사용하는 사람들은 다양하다. 이 모든 환경과 사용자에 맞춰서 웹 페이지를 개발하는 일은 쉽지 않지만, 웹 표준에 맞춰 개발하는 것 만으로도 이러한 문제를 해결할 수 있다.&lt;/p&gt;
+
+&lt;h3&gt; Semantic HTML &lt;/h3&gt;
+
+&lt;p&gt;웹 표준에서는 HTML을 시맨틱(semantic)하게 작성하는 것의 중요성을 강조한다. 아래의 각 단어를 합쳐서 만든 시맨틱 HTML은 HTML이 구조를 만드는 것을 넘어 의미를 갖도록 만들겠다는 의도가 담겨 있다고 할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+ &lt;li&gt;&lt;strong&gt;semantic&lt;/strong&gt; : 의미의, 의미가 있는 이라는 뜻의 영단어 &lt;/li&gt;
+ &lt;li&gt;&lt;strong&gt;HTML&lt;/strong&gt; : 화면의 구조를 만드는 마크업 언어 &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;시맨틱 요소의 종류&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/200492894-e2596ef7-f0f5-4fd8-ae84-0ed54d011a18.png&quot; alt=&quot;스크린샷 2022-11-08 15-39-03&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt; 자주 틀리는 마크업&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt; 1. 인라인 요소 안에 블록 요소 넣기 &lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;HTML 요소는 표시 방법에 따라 인라인 요소, 블록 요소로 나뉜다. 인라인 요소는 콘텐츠가 차지하는 만큼만, 블록 요소는 가로로 넓게 화면 영역을 차지하며, 대표적인 인라인 요소로는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&lt;/code&gt;, 블록 요소로는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 가 있다. 인라인 요소는 항상 블록 요소 안에 들어가야 하며, 반대의 경우는 있어서는 안 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// h1, div 요소는 블록 요소이고, // a, span 요소는 인라인 요소입니다.
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;나쁜 예시 1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;나쁜 예시 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt; 2. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;b&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;i&amp;gt;&lt;/code&gt; 요소 사용하기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;b&amp;gt;&lt;/code&gt; 요소와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;i&amp;gt;&lt;/code&gt; 요소는 각각 글씨를 굵게 만들 때, 글씨를 기울일 때 사용하는 요소이다. 하지만 시맨틱 하지 않은, &lt;strong&gt;표현&lt;/strong&gt;을 기준으로 이름이 지어진 요소이기 때문에 웹 표준을 준수하기 위해서는 대신 똑같은 스타일을 부여하면서 &lt;strong&gt;콘텐츠&lt;/strong&gt;에 의미를 부여하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;strong&amp;gt;&lt;/code&gt; 요소와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;em&amp;gt;&lt;/code&gt; 요소를 사용하는 것이 좋다. 두 요소는 글씨에 효과를 줌과 동시에 각 콘텐츠를 강조하는 의미를 부여한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;b&amp;gt;&lt;/span&gt;글씨를 두껍게&lt;span class=&quot;nt&quot;&gt;&amp;lt;/b&amp;gt;&lt;/span&gt; -- 대체하기 --&amp;gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;strong&amp;gt;&lt;/span&gt;콘텐츠 매우 강조하기&lt;span class=&quot;nt&quot;&gt;&amp;lt;/strong&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&amp;gt;&lt;/span&gt;글씨 기울이기&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&lt;/span&gt; -- 대체하기 --&amp;gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;em&amp;gt;&lt;/span&gt;콘텐츠 강조하기&lt;span class=&quot;nt&quot;&gt;&amp;lt;/em&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt; 3. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;hgroup&amp;gt;&lt;/code&gt; 마구잡이로 사용하기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;hgroup&amp;gt;&lt;/code&gt; 요소들은 목차의 역할을 하면서 콘텐츠의 상하 관계를 표시하기 위해서 사용한다. 이를 시각적으로 나타내기 위해서 숫자가 작을수록 글자의 크기가 크고, 숫자가 작을 수록 크기가 작다. 그런데 이러한 특성 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;hgroup&amp;gt;&lt;/code&gt; 의 시맨틱 요소로서의 역할을 간과한 채 글자에 스타일 속성을 적용하기 위한 목적으로 사용하는 경우가 있다. 이럴 경우 화면은 보기 좋아도, 사용자에게 완전히 잘못된 화면 구조 정보를 전달하게 되므로 주의해야 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 나쁜 예시
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;엄청 큰 글씨&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;적당히 큰 글씨&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;큰 글씨&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h6&amp;gt;&lt;/span&gt;엄청 작은 글씨&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h6&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;그냥 글씨&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+
+// 좋은 예시
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;제목&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;큰 목차&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;작은 목차&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;작은 목차&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;큰 목차&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&amp;gt;&lt;/span&gt;작은 목차&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;더 작은 목차&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h4&amp;gt;&lt;/span&gt;더 작은 목차&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h4&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt; 4. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;br /&amp;gt;&lt;/code&gt; 연속으로 사용하기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;br /&amp;gt;&lt;/code&gt; 은 쭉 이어지는 텍스트 흐름에 줄 바꿈을 해주기 위해서 사용하는 요소이며, 요소 사이에 간격을 만들기 위한 목적으로 남발해서는 안된다. 요소 사이에 간격이 필요한 경우에는 아예 별도의 단락으로 구별하거나 CSS 속성을 주어 여백을 조정해주는 것이 바람직하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// 나쁜 예시 요소 사이에 여백을 주고싶을 때
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+이렇게 하시면 안 됩니다. // 좋은 예시 1
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;요소 사이에 여백을 주고싶을 땐&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;아예 별도의 단락으로 구별하세요.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+// 좋은 예시 2 //HTML 파일
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;margin&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;요소 사이에 여백을 주고싶을 땐&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;margin&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;CSS 속성으로 여백을 설정해주세요.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+
+//CSS 파일 .margin { margin: 10px }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt; 5. 인라인 스타일링 사용하기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;웹 표준으로 HTML, CSS, JavaScript 등의 사용 방법을 정리하면서 각 영역이 분리되어 여러 이점을 얻을 수 있었다. 그런데 HTML 요소 안에 인라인으로 스타일링 속성을 설정하는 것은 기껏 분리한 영역을 다시 합치는 것과 같으므로, 웹 표준을 지키기 위해서는, HTML과 CSS 코드를 분리해서 작성해주어야 한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+//HTML 파일
+&amp;lt;head&amp;gt;
+  &amp;lt;style&amp;gt;
+    h1 { color : &quot;red&quot; }
+  &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+
+(O) &amp;lt;h1&amp;gt;스타일링 속성은 CSS로 작성해주세요.&amp;lt;h1&amp;gt;
+(O) &amp;lt;h2&amp;gt;style 요소를 사용해도, CSS 파일을 따로 작성해도 괜찮습니다.&amp;lt;h2&amp;gt;
+(X) &amp;lt;h3 style=&quot;color: blue&quot;&amp;gt;이렇게 인라인 스타일링으로는 사용하지 마세요.&amp;lt;/h3&amp;gt;
+
+//CSS 파일
+h2 { color : &quot;yellow&quot; }
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3&gt; 크로스 브라우징 &lt;/h3&gt;
+
+&lt;p&gt;크로스 브라우징(Cross Browsing)이란 웹 사이트에 접근하는 브라우저의 종류에 상관 없이 동등한 화면과 기능을 제공할 수 있도록 만드는 작업을 의미한다. 여기에서 중요한 포인트는 ‘동일한’이 아니라 ’동등한’이라는 표현을 쓴다는 것이다. 크로스 브라우징은 모든 브라우저에서 완전히 똑같은 화면이 보이도록 만드는 것이 아니며, 애초에 브라우저마다 사용하는 렌더링 엔진이 다르기 때문에 화면을 완전히 동일하게 만드는 것은 불가능 하다. 따라서 크로스 브라우징의 목표는 모든 브라우저에서 동등한 수준의 정보와 기능을 제공하는 것이라고 할 수 있다.&lt;/p&gt;
+
+&lt;h4&gt;크로스 브라우징 워크 플로우&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;1. 초기 기획&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;초기 기획 단계에서 어떤 웹 사이트를 만들 것인지 정확하게 결정해야 한다. 어떤 콘텐츠와 기능이 있어야 하는지, 디자인은 어떻게 할지 등의 사항을 결정해야 한다. 그 후에는 이 사이트의 고객이 누구일지 생각해야 하며, 고객이 사용하는 브라우저는 무엇일지, 기기는 무엇일지 고민이 필요하다. 타겟 고객층이 주로 사용하게 될 브라우저와 기기를 파악했다면, 여기에 맞는 기술을 사용해서 개발할 수 있도록 기획해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. 개발&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;코드를 작성할 때 사용하는 코드가 각 브라우저에서의 호환성이 어떤지 파악하고 사용해야 한다. MDN, Can I Use 등의 사이트에서 코드의 호환성을 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. 테스트 / 발견&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;각 기능을 구현한 후에는 그 기능에 대한 테스트가 필요하다.&lt;/p&gt;
+
+&lt;p&gt;안정적인 데스크톱 브라우저(롬, 엣지, 파이어폭스, 오페라, 사파리 등)에서 테스트를 진행한다.
+휴대폰 및 태플릿 브라우저(삼성 인터넷, 사파리, 안드로이드 기기의 크롬 등)에서 테스트를 진행한다.
+그 외에도 초기 기획 단계에서 목표했던 브라우저가 있다면 해당 브라우저에서 테스트를 진행한다.
+Window, Linux, Mac 등 다양한 운영 체제에서도 테스트를 진행한다.
+직접 테스트를 수행할 수도 있지만, 자동으로 테스트를 진행해주는 도구를 이용하는 것도 방법이다. TestComplete, LambdaTest, BitBar 등의 크로스 브라우징 테스트 툴이 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4. 수정 / 반복&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;테스트 단계에서 버그가 발견되었다면 수정이 필요하다. 버그가 발생하는 위치를 최대한 좁혀서 특정하고, 버그가 발생하는 특정 브라우저에서의 해결 방법을 정해야 한다. 섣불리 코드를 수정했다가는 다른 브라우저에서 버그가 발생할 수 있으므로, 조건문을 작성해 다른 코드를 실행하게 하는 방식으로 고쳐나가는 것이 좋다. 수정이 완료되면 3번 과정부터 반복한다.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Nov 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-11/%EC%9B%B9%ED%91%9C%EC%A4%80</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11/%EC%9B%B9%ED%91%9C%EC%A4%80</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>웹 접근성</title>
+        <description>&lt;h2 id=&quot;웹-접근성이란-&quot;&gt;웹 접근성이란 ?&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;웹 접근성&lt;/strong&gt;을 갖추면 웹에 접근했을 때 그 어떤 상황에서도 항상 동등한 수준의 정보를 제공받도록 보장받을 수 있다. 결국 웹 접근성의 궁극적인 목적은 어떤 상황이든, 어떤 사람이든 정보를 제공받지 못하는 경우가 없도록하는 것이다.&lt;/p&gt;
+
+&lt;h3&gt;웹 접근성을 갖추면 얻을 수 있는 효과&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;1. 사용자층 확대&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;웹 접근성을 확보하면 장애인, 고령자 등 정보 소외 계층도 웹 사이트를 자유롭게 이용할 수 있게 된다. 그만큼 사이트의 이용자를 늘릴 수 있고, 새로운 고객층을 확보할 수 있게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. 다양한 환경 지원&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;정보 소외 계층이 아니더라도 정보에 접근하기 어려운 상황에 처할 수 있다. 운전 중이라 화면을 보기 어렵거나, 마우스를 사용할 수 없는 상황 등이 있다. 웹 접근성을 향상시키면 다양한 환경, 다양한 기기에서의 웹 사이트를 자유롭게 사용할 수 있게 되므로 서비스의 사용 범위가 확대된다. 자연스럽게 서비스의 이용자 수 증가를 기대할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. 사회적 이미지 향상&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;기업의 사회적 책임에 대한 중요성이 점점 증가하고있는 상황에서, 웹 접근성 확보를 통해 기업이 정보 소외 계층을 위한 사회 공헌 및 복지 향상에 힘쓰고 있음을 보여줄 수 있다. 기업의 사회적 이미지가 향상되면 그만큼 이용자 수의 증가는 물론 충성 고객을 확보할 수 있는 가능성이 늘어나게 된다.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Nov 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-11/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11/%EC%9B%B9%EC%A0%91%EA%B7%BC%EC%84%B1</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>Redux의 데이터 흐름</title>
