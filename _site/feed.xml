@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 23 Nov 2022 16:47:11 +0900</pubDate>
-    <lastBuildDate>Wed, 23 Nov 2022 16:47:11 +0900</lastBuildDate>
+    <pubDate>Sun, 27 Nov 2022 18:19:51 +0900</pubDate>
+    <lastBuildDate>Sun, 27 Nov 2022 18:19:51 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -165,6 +165,33 @@
         
         
         <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>박스 가운데 정렬</title>
+        <description>&lt;h2 id=&quot;박스를-가운데로-정렬하고-싶을-때&quot;&gt;박스를 가운데로 정렬하고 싶을 때&lt;/h2&gt;
+
+&lt;p&gt;todolist를 만드는 도중 컴포넌트를 감싸고 있는 컨테이너를 가운데로 위치시키고 싶은데 어떻게 하면 좋을지 몰라서 찾아보았다!&lt;/p&gt;
+
+&lt;p&gt;css에서 우선 박스가 생성이 되야하므로 width와 height를 정해주고
+margin-left : auto , margin-right : auto 를 { } 안에 써준다.&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;375px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;500px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 08 Nov 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-11/%EB%B0%95%EC%8A%A4-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EC%A0%95%EB%A0%AC</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11/%EB%B0%95%EC%8A%A4-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EC%A0%95%EB%A0%AC</guid>
+        
+        
+        <category>css</category>
         
       </item>
     

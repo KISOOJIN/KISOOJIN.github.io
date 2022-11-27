@@ -4,7 +4,7 @@
 
 
 <head>
-  <title>React intro - component  | SOOJIN BLOG</title>
+  <title>박스 가운데 정렬 | SOOJIN BLOG</title>
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/assets/css/main.css" media="all">
-  <link rel="canonical" href="http://localhost:4000/2022-09/React-intro-component">
+  <link rel="canonical" href="http://localhost:4000/2022-11/%EB%B0%95%EC%8A%A4-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EC%A0%95%EB%A0%AC">
   <link rel="alternate" type="application/rss+xml" title="SOOJIN BLOG"
     href="/feed.xml" />
 
@@ -149,56 +149,36 @@
     <div class="post">
   <div>
     
-    <p class="post_title">React intro - component </p>
+    <p class="post_title">박스 가운데 정렬</p>
     
   </div>
   <div class="post_data">
     
-    <span class="post_date">Sep 28, 2022</span>
+    <span class="post_date">Nov 8, 2022</span>
     
     
     <span class="post_categories">
       &raquo; 
-      <a href="/categories/React">React</a>
+      <a href="/categories/css">css</a>
     </span>
     
   </div>
   <div class="post_content">
-    <blockquote>
-  <h2 id="컴포넌트는-무엇인가">컴포넌트는 무엇인가?</h2>
-</blockquote>
+    <h2 id="박스를-가운데로-정렬하고-싶을-때">박스를 가운데로 정렬하고 싶을 때</h2>
 
-<p><br /></p>
+<p>todolist를 만드는 도중 컴포넌트를 감싸고 있는 컨테이너를 가운데로 위치시키고 싶은데 어떻게 하면 좋을지 몰라서 찾아보았다!</p>
 
-<p>하나의 기능 구현을 위한 여러 종류의 코드 묶음, UI를 구성하는 필수 요소</p>
+<p>css에서 우선 박스가 생성이 되야하므로 width와 height를 정해주고
+margin-left : auto , margin-right : auto 를 { } 안에 써준다.</p>
 
-<p><br /></p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Component</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">name</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">age</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.container</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="nb">solid</span> <span class="m">1px</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">375px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">500px</span><span class="p">;</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></div>
-
-<p><br /></p>
-
-<p><img src="https://user-images.githubusercontent.com/111376707/192799197-2e5cfd3a-126b-4448-acfa-e3ca130e2d12.png" alt="스크린샷 2022-09-28 23-00-55" /></p>
-
-<blockquote>
-  <p>리액트를 이용하면, 각자 독립적인 기능을 가지며 UI의 한 부분을 담당하기도 하는 컴포넌트를 여러 개 만들고 조합하여 애플리케이션을 만들 수 있다.</p>
-</blockquote>
-
-<p><br /></p>
-
-<p><img src="https://user-images.githubusercontent.com/111376707/192800643-a53cb8be-6821-4506-b087-6224d9912b3d.png" alt="스크린샷 2022-09-28 23-06-49" /></p>
-
-<blockquote>
-  <p>모든 리액트 애플리케이션은 최소 한 개의 컴포넌트를 가지고 있으며, 이 컴포넌트는 애플리케이션 내부적으로는 근원(root)이 되는 역할을 한다. 이 최상위 컴포넌트는 근원의 역할을 하므로 다른 자식 컴포넌트를 가질 수 있으며, 이 계층적 구조(hierarchy)를 트리 구조로 형상화할 수 있다.</p>
-</blockquote>
 
   </div>
 
