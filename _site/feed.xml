@@ -6,9 +6,87 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 27 Nov 2022 18:19:51 +0900</pubDate>
-    <lastBuildDate>Sun, 27 Nov 2022 18:19:51 +0900</lastBuildDate>
+    <pubDate>Tue, 29 Nov 2022 21:14:39 +0900</pubDate>
+    <lastBuildDate>Tue, 29 Nov 2022 21:14:39 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>PUT과 PATCH 차이</title>
+        <description>&lt;h2 id=&quot;put-과-patch-차이&quot;&gt;PUT 과 PATCH 차이&lt;/h2&gt;
+
+&lt;p&gt;과제 도중 fetch를 이용하여 요청을 보내 data.JSON에 데이터를 넣어주는 법을 찾았고, 방법 중에 리소스의 업데이트를 할때 사용되는 메소드는 PUT 과 PATCH가 있었다.
+그런데 PUT과 PATCH의 차이를 몰라 찾아보게 되었다.&lt;/p&gt;
+
+&lt;p&gt;HTTP Method 중에 PUT 과 PATCH는 리소스의 업데이트를 의미한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PUT: 리소스의 모든 것을 업데이트 한다.
+
+PATCH: 리소스의 일부를 업데이트 한다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;아래와 같은 리소스가 있다고 가정할 때,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/204526043-1eb8edfa-25f1-49af-b867-eb51bf80ec09.png&quot; alt=&quot;스크린샷 2022-11-29 21-11-09&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;아래와 같이 &lt;strong&gt;PUT&lt;/strong&gt; 으로 요청을 보내면&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PUT /소설/1
+
+{
+    title : &quot;브레이킹던&quot;,
+
+    author : &quot;스테프니 메이어&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/204526183-d1477ff8-a28a-4503-9af0-552a555803c6.png&quot; alt=&quot;스크린샷 2022-11-29 21-11-44&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이와 같이 변한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그럼 title만 요청을 보내게 되면,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PUT /소설/1
+
+{
+    title : &quot;브레이킹던&quot;,
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/204526134-7d2f66b8-7103-4c82-a5e0-0c73bd771890.png&quot; alt=&quot;스크린샷 2022-11-29 21-11-29&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;보내지지 않은 값에 대해서는 null 값으로 변하는 것을 알 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;그렇다면 &lt;strong&gt;PATCH&lt;/strong&gt; 의 경우,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PATCH /소설/1
+
+{
+    title : &quot;브레이킹던&quot;,
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/204526183-d1477ff8-a28a-4503-9af0-552a555803c6.png&quot; alt=&quot;스크린샷 2022-11-29 21-11-44&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;요청에 포함되어 있는 부분만 변경이 된다는 차이점이 있다.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Nov 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-11/PUT%EA%B3%BC-PATCH-%EC%B0%A8%EC%9D%B4</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-11/PUT%EA%B3%BC-PATCH-%EC%B0%A8%EC%9D%B4</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
     
       <item>
         <title>번들링과 웹팩</title>
@@ -185,6 +263,12 @@ margin-left : auto , margin-right : auto 를 { } 안에 써준다.&lt;/p&gt;
   &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;result&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/204127856-cf6efc60-6c69-44fc-8a6d-512fc6044882.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 08 Nov 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/2022-11/%EB%B0%95%EC%8A%A4-%EA%B0%80%EC%9A%B4%EB%8D%B0-%EC%A0%95%EB%A0%AC</link>
