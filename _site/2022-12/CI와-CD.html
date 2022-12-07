@@ -259,12 +259,9 @@
 <h2>Github Actions을 이용한 지속적 통합</h2>
 
 <ol>
-  <li>자신의 깃허브 계정에 새로운 리포지토리를 만듭니다.</li>
-</ol>
-
-<p>참고) public으로 만들어야 Github Action을 무료로 이용할 수 있습니다.</p>
-
-<ol>
+  <li>
+    <p>자신의 깃허브 계정에 새로운 리포지토리를 만듭니다. public으로 만들어야 Github Action을 무료로 이용할 수 있습니다.</p>
+  </li>
   <li>
     <p>코드를 원격 코드 저장소, 여기서는 새로 생성한 github repository에 push 합니다.</p>
   </li>
@@ -273,24 +270,7 @@
   </li>
 </ol>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Bare Minimum Requirements</span>
-
-<span class="c1"># 언제 job을 작동시킬지</span>
-<span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">push</span><span class="pi">,</span> <span class="nv">pull_request</span><span class="pi">]</span>
-
-<span class="c1"># 어떤 job을 할지</span>
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">test</span><span class="pi">:</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Bare Minimum Requirements</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v1</span>
-        <span class="na">with</span><span class="pi">:</span>
-          <span class="na">node-version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">16"</span>
-      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">npm install</span>
-      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">npm test</span>
-</code></pre></div></div>
+<p><img src="https://user-images.githubusercontent.com/111376707/206219262-33a5b4dd-1926-4435-a070-6509b5754b05.png" alt="스크린샷 2022-12-08 00-22-10" /></p>
 
 <ul>
   <li>npm install은 빌드를 위한 준비과정으로 볼 수 있습니다. Node.js로 만든 서버 애플리케이션은 npm으로 관련 오픈소스를 모두 깔끔하게 설치해야 작동하기 때문입니다.</li>
@@ -305,43 +285,7 @@
   <li>Deploy: github acitons의 YAML 파일에 적힌 명령어를 토대로 s3로 빌드 결과를 업로드합니다.</li>
 </ul>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/client.yml</span>
-<span class="na">name</span><span class="pi">:</span> <span class="s">client</span>
-<span class="na">on</span><span class="pi">:</span>
-  <span class="na">push</span><span class="pi">:</span>
-    <span class="na">branches</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">branch 이름</span>
-<span class="na">jobs</span><span class="pi">:</span>
-  <span class="na">build</span><span class="pi">:</span>
-    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-20.04</span>
-    <span class="na">steps</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout source code.</span>
-        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">npm install</span>
-        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">./my-agora-states-client</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="s">npm run build</span>
-        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">./my-agora-states-client</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">SHOW AWS CLI VERSION</span>
-        <span class="na">env</span><span class="pi">:</span>
-          <span class="na">AWS_ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_SECRET_ACCESS_KEY</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_EC2_METADATA_DISABLED</span><span class="pi">:</span> <span class="no">true</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="s">aws --version</span>
-      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Sync Bucket</span>
-        <span class="na">env</span><span class="pi">:</span>
-          <span class="na">AWS_ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_SECRET_ACCESS_KEY</span><span class="pi">:</span> <span class="s">$</span>
-          <span class="na">AWS_EC2_METADATA_DISABLED</span><span class="pi">:</span> <span class="no">true</span>
-        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="s">aws s3 sync \</span>
-            <span class="s">--region ap-northeast-2 \</span>
-            <span class="s">build s3://aws의 인스턴스이름 \</span>
-            <span class="s">--delete</span>
-        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">build를 할 폴더</span>
-</code></pre></div></div>
+<p><img src="https://user-images.githubusercontent.com/111376707/206219477-089a625b-1ea4-4aad-8bdc-d7843d5a5d62.png" alt="스크린샷 2022-12-08 00-21-49" /></p>
 
 <p>띄어쓰기 주의해야 한다. 잘못하면 오류가 발생한다!
 그리고 AWS 키는 노출되면 안되기 때문에 Github action에 secret를 이용하여 AWS 시크릿을 넣어준다.</p>
