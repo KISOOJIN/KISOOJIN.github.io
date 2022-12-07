@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+  <title>CI와 CD | SOOJIN BLOG</title>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="SOOJIN">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/assets/css/main.css" media="all">
+  <link rel="canonical" href="http://localhost:4000/2022-12/CI%EC%99%80-CD">
+  <link rel="alternate" type="application/rss+xml" title="SOOJIN BLOG"
+    href="/feed.xml" />
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i" rel="stylesheet">
+</head>
+
+<body>
+  <div class="content">
+
+    <header class="header">
+
+  <div class="header_content">
+    <label class="theme_changer">
+      <input theme_toggle type="checkbox">
+      <div class="button"></div>
+    </label>
+    <a class="header_circle" href="/">
+      <img src="/assets/img/cat.jpg" alt="catbook">
+    </a>
+    <span class="header_name">SOOJIN</span>
+    <span class="header_job">배운 것을 기록하는 공간</span>
+    <span class="header_mes"></span>
+
+    <nav class="nav">
+      
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/writing" id="aa">writing
+            (1)</a>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/TIL" id="aa">TIL
+            (15)</a>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/React" id="aa">React
+            (2)</a>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/UI-UX" id="aa">UI-UX
+            (1)</a>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/Redux" id="aa">Redux
+            (1)</a>
+        </li>
+      </ul>
+      
+      
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/categories/css" id="aa">css
+            (1)</a>
+        </li>
+      </ul>
+      
+    </nav>
+  </div>
+
+</header>
+
+
+
+    <nav class="mobile_menu">
+
+  <ul class="nav_list">
+    
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/writing" id="aa">writing (1)</a>
+    </li>
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/TIL" id="aa">TIL (15)</a>
+    </li>
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/React" id="aa">React (2)</a>
+    </li>
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/UI-UX" id="aa">UI-UX (1)</a>
+    </li>
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/Redux" id="aa">Redux (1)</a>
+    </li>
+    
+    
+
+    <li class="nav_item">
+      <a href="/categories/css" id="aa">css (1)</a>
+    </li>
+    
+  </ul>
+
+</nav>
+    
+    <main class="main">
+
+    <div class="post">
+  <div>
+    
+    <p class="post_title">CI와 CD</p>
+    
+  </div>
+  <div class="post_data">
+    
+    <span class="post_date">Dec 7, 2022</span>
+    
+    
+    <span class="post_categories">
+      &raquo; 
+      <a href="/categories/TIL">TIL</a>
+    </span>
+    
+  </div>
+  <div class="post_content">
+    <h1>CI/CD</h1>
+
+<h2>CI/CD의 단계</h2>
+
+<p><img src="https://user-images.githubusercontent.com/111376707/206178700-1ea0dfef-1948-45d2-88eb-dcf6298f58c9.png" alt="스크린샷 2022-12-07 21-24-15" /></p>
+
+<h2>지속적 통합(Continuous Integration, CI)</h2>
+
+<p>개발자를 위한 자동화 프로세스라고 볼 수 있으며, Code - Build - Test 단계에서 꾀할 수 있습니다.</p>
+
+<ul>
+  <li>Code : 개발자가 코드를 원격 코드 저장소 (Ex. github repository)에 push하는 단계입니다.</li>
+  <li>Build : 원격 코드 저장소로부터 코드를 가져와 유닛 테스트 후 빌드하는 단계입니다.</li>
+  <li>Test : 코드 빌드의 결과물이 다른 컴포넌트와 잘 통합되는 지 확인하는 과정입니다.</li>
+</ul>
+
+<p>이 과정에서 개발자는 코드를 잦게 원격 코드 저장소에 push하고, 테스트 및 빌드를 하며 빌드 결과를 통해 빌드가 성공했는지 실패했는지 확인하며, 통합 테스트 결과를 통해 개선 방안을 찾습니다. 이 지속적인 통합 과정을 통해 개발자는 버그를 일찍 발견할 수 있고, 테스트가 완료된 코드에 대해 빠른 전달이 가능해지며 지속적인 배포가 가능해집니다.</p>
+
+<p>지속적 통합은 모든 코드 변화를 하나의 리포지토리에서 관리하는 것 부터 시작합니다. 모든 개발팀이 코드의 변화를 확인할 수 있기 때문에, 투명하게 문제점을 파악할 수 있습니다. 그리고 잦은 풀 리퀘스트(pull request)와 머지(merge)로 코드를 자주 통합합니다. 이 때, 기본적인 테스트도 작동시킬 수 있습니다. 이렇게 지속적 통합을 통해 개발팀은 각자 개발한 코드를 이른 시점에 자주 합치고 자주 테스트 해볼 수 있습니다.</p>
+
+<p>지속적 통합으로 보안 이슈, 에러 등을 쉽게 파악할 수 있어 해당 이슈를 빠르게 개선할 수 있습니다. 지속적 통합이 적용된 개발팀은 코드를 머지하기 전, 이미 빌드 오류나 테스트 오류를 확인하여 훨씬 더 효율적인 개발을 할 수 있게 됩니다.</p>
+
+<h2>지속적 배포(Continuous Delivery/Deployment, CD)</h2>
+
+<p>지속적인 서비스 제공(Continuous Delivery) 및 지속적인 배포(Continuous Deployment)를 의미하며 이 두 용어는 상호 교환적으로 사용됩니다. 이 부분은 Release - Deploy - Operate 단계에서 꾀할 수 있습니다.</p>
+
+<ul>
+  <li>Release : 배포 가능한 소프트웨어 패키지를 작성합니다.</li>
+  <li>Deploy : 프로비저닝을 실행하고 서비스를 사용자에게 노출합니다. 실질적인 배포 부분입니다.</li>
+  <li>Operate : 서비스 현황을 파악하고 생길 수 있는 문제를 감지합니다.</li>
+</ul>
+
+<h2>배포 자동화</h2>
+
+<p>배포 자동화란?</p>
+
+<p>한번의 클릭 혹은 명령어 입력을 통해 전체 배포 과정을 자동으로 진행하는 것.
+그렇다면 배포 자동화가 왜 필요할까요?</p>
+
+<ul>
+  <li>먼저 수동적이고 반복적인 배포 과정을 자동화함으로써 시간이 절약됩니다.</li>
+  <li>휴먼 에러(Human Error)를 방지할 수 있습니다.</li>
+</ul>
+
+<h2>CI/CD 파이프라인</h2>
+
+<p>그렇다면 빠른 배포 속도를 보장 받기 위해서 어떻게 해야 할까요?</p>
+
+<p>수없이 진행되는 배포 과정을 자동화시키는 방법을 구축하게 되는데, 그것을 CI/CD 파이프라인이라고 합니다.</p>
+
+<ol>
+  <li>개발자가 코드를 원격 저장소에 올립니다.(Code)</li>
+  <li>그 코드가 테스트/빌드 서버에서 빌드(Build) 및 테스트(Test)와 릴리즈(Release)를 거쳐 배포 서버로 전달 됩니다.</li>
+  <li>배포 서버에 도달한 빌드된 코드는 애플리케이션 서버로 최종 배포가 완료 되고(Deploy), 그 결과물을 유저가 직접 확인하게 됩니다.</li>
+</ol>
+
+<p>여기서 자동화가 되는 부분은 보통 코드가 빌드되면서 최종적으로 배포가 되는 단계까지입니다.
+이 부분을 지속적인 통합 및 배포를 위하여 일련의 자동화 단계로 만드는데, 이것을 파이프라인을 구축한다고 표현합니다.</p>
+
+<h2>CI/CD 파이프라인을 구성하는 기본 단계와 수행 작업</h2>
+
+<p>배포에서 파이프라인(Pipeline)이란 소스 코드의 관리부터 실제 서비스로의 배포 과정을 연결하는 구조를 의미합니다.
+파이프라인은 전체 배포 과정을 여러 단계(Stages)로 분리합니다. 각 단계는 파이프라인 안에서 순차적으로 실행되며, 각 단계마다 주어진 작업(Actions)들을 수행합니다.</p>
+
+<ol>
+  <li>Source 단계: Source 단계에서는 원격 저장소에 관리되고 있는 소스 코드에 변경 사항이 일어날 경우, 이를 감지하고 다음 단계로 전달하는 작업을 수행합니다.</li>
+  <li>Build 단계: Build 단계에서는 Source 단계에서 전달받은 코드를 컴파일, 빌드, 테스트하여 가공한 후, 생성된 결과물을 다음 단계로 전달하는 작업을 수행합니다.</li>
+  <li>Deploy 단계: Deploy 단계에서는 Build 단계로부터 전달받은 결과물을 실제 서비스에 반영하는 작업을 수행합니다.</li>
+</ol>
+
+<h2>CI/CD 파이프라인 구성 요소 및 장점</h2>
+
+<ul>
+  <li>빌드 (소프트웨어 컴파일)</li>
+  <li>테스트 (호환성 및 오류 검사)</li>
+  <li>릴리스 (버전 제어 저장소의 애플리케이션 업데이트)</li>
+  <li>배포 (개발에서 프로덕션 환경으로의 변환)</li>
+  <li>규정 준수 및 유효성 검사</li>
+</ul>
+
+<p>파이프라인은 최신 버전의 소프트웨어 애플리케이션을 업데이트하고 제공하려는 일련의 처리 단계에 걸리는 시간을 수동보다 더 빠르고 안정적이며 효과적으로 줄여주고, CI/CD 인프라와의 호환성과 효율성을 높여줍니다.</p>
+
+<h2>Github Actions이란?</h2>
+
+<p><img src="https://user-images.githubusercontent.com/111376707/206209278-9936c5e7-b45c-45f4-9c2c-ed86cedd5a02.png" alt="스크린샷 2022-12-07 23-43-19" /></p>
+
+<p>GitHub Actions는 Github가 공식적으로 제공하는 빌드, 테스트 및 배포 파이프라인을 자동화할 수 있는 CI/CD 플랫폼입니다.</p>
+
+<p>레포지토리에서 Pull Request 나 push 같은 이벤트를 트리거로 GitHub 작업 워크플로(Workflow)를 구성할 수 있습니다. 워크플로는 하나 이상의 작업이 실행되는 자동화 프로세스로, 각 작업은 자체 가상 머신 또는 컨테이너 내부에서 실행됩니다.</p>
+
+<p>워크플로는 .yml (혹은 .yaml ) 파일에 의해 구성되며, 테스트, 배포 등 기능에 따라 여러개의 워크플로도 만들 수 있습니다. 생성된 워크플로는 .github/workflows 디렉토리 이하에 위치합니다.</p>
+
+<h2>Github Actions을 이용한 지속적 통합</h2>
+
+<ol>
+  <li>자신의 깃허브 계정에 새로운 리포지토리를 만듭니다.</li>
+</ol>
+
+<p>참고) public으로 만들어야 Github Action을 무료로 이용할 수 있습니다.</p>
+
+<ol>
+  <li>
+    <p>코드를 원격 코드 저장소, 여기서는 새로 생성한 github repository에 push 합니다.</p>
+  </li>
+  <li>
+    <p>./.github/workflows/이름.yml 파일에 언제 어떤 job을 할지 명시되어 있어 자동으로 build와 test가 진행됩니다.</p>
+  </li>
+</ol>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Bare Minimum Requirements</span>
+
+<span class="c1"># 언제 job을 작동시킬지</span>
+<span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">push</span><span class="pi">,</span> <span class="nv">pull_request</span><span class="pi">]</span>
+
+<span class="c1"># 어떤 job을 할지</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">test</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Bare Minimum Requirements</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-node@v1</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">node-version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">16"</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">npm install</span>
+      <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">npm test</span>
+</code></pre></div></div>
+
+<ul>
+  <li>npm install은 빌드를 위한 준비과정으로 볼 수 있습니다. Node.js로 만든 서버 애플리케이션은 npm으로 관련 오픈소스를 모두 깔끔하게 설치해야 작동하기 때문입니다.</li>
+  <li>npm test는 유닛 테스트 과정입니다. 작성한 코드가 요구사항 충족을 위한 최소한의 조건을 만족했는지 확인하고 있습니다.</li>
+</ul>
+
+<h2>Github Actions를 통한 배포 Flow(Client)</h2>
+
+<ul>
+  <li>Source: Github reference 브랜치에 코드가 커밋되면</li>
+  <li>Build: github acitons의 YAML 파일에 적힌 명령어를 토대로 Webpack을 이용해 빌드를 하고</li>
+  <li>Deploy: github acitons의 YAML 파일에 적힌 명령어를 토대로 s3로 빌드 결과를 업로드합니다.</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/client.yml</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">client</span>
+<span class="na">on</span><span class="pi">:</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">branch 이름</span>
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-20.04</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout source code.</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">npm install</span>
+        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">./my-agora-states-client</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">npm run build</span>
+        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">./my-agora-states-client</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">SHOW AWS CLI VERSION</span>
+        <span class="na">env</span><span class="pi">:</span>
+          <span class="na">AWS_ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">AWS_SECRET_ACCESS_KEY</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">AWS_EC2_METADATA_DISABLED</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">aws --version</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Sync Bucket</span>
+        <span class="na">env</span><span class="pi">:</span>
+          <span class="na">AWS_ACCESS_KEY_ID</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">AWS_SECRET_ACCESS_KEY</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">AWS_EC2_METADATA_DISABLED</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">aws s3 sync \</span>
+            <span class="s">--region ap-northeast-2 \</span>
+            <span class="s">build s3://aws의 인스턴스이름 \</span>
+            <span class="s">--delete</span>
+        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">build를 할 폴더</span>
+</code></pre></div></div>
+
+<p>띄어쓰기 주의해야 한다. 잘못하면 오류가 발생한다!
+그리고 AWS 키는 노출되면 안되기 때문에 Github action에 secret를 이용하여 AWS 시크릿을 넣어준다.</p>
+
+<p>위와 같은 client.yml을 작성하고 원격 저장소에 push를 하면 자동으로 배포가 됩니다.</p>
+
+<h3>Github Actions으로 클라이언트 CI/CD를 구축한 배포 링크</h3>
+
+<p><a href="http://fe-9-kisoojin-s3.s3-website.ap-northeast-2.amazonaws.com/">http://fe-9-kisoojin-s3.s3-website.ap-northeast-2.amazonaws.com/</a></p>
+
+  </div>
+
+
+  
+  <div class="post_comment">
+
+    
+
+    
+
+
+  </div>
+  
+
+</div>
+
+
+    </main>
+
+  </div>
+
+  <footer class="footer">
+  <div>
+    &copy; 2022 SOOJIN.
+    Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>.
+    Get this theme
+    <a href="https://github.com/starry99/catbook" target="_blank">here</a>.
+  </div>
+</footer>
+
+  <!-- js from https://codepen.io/MrGrigri/pen/XQmWBv -->
+
+<script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+    const themePreference = () => {
+        const hasLocalStorage = localStorage.getItem('theme');
+        let supports = false;
+        let theme = undefined;
+
+        if (hasLocalStorage === 'light') {
+            theme = 'light';
+        }
+        if (hasLocalStorage === 'dark') {
+            theme = 'dark';
+        }
+
+        if (window.matchMedia(`(prefers_color: dark)`).matches) {
+            theme = hasLocalStorage ? hasLocalStorage : 'dark';
+            supports = true;
+        };
+        if (window.matchMedia(`(prefers_color: light)`).matches) {
+            theme = hasLocalStorage ? hasLocalStorage : 'light';
+            supports = true;
+        };
+        if (window.matchMedia(`(prefers_color: no-preference)`).matches) {
+            theme = hasLocalStorage ? hasLocalStorage : 'none';
+            supports = true;
+        };
+
+        return {
+            supports,
+            theme
+        };
+    }
+
+    document.addEventListener('DOMContentLoaded', e => {
+        console.clear();
+
+        const userThemePreference = themePreference();
+        const toggle = document.querySelector('[theme_toggle]');
+        const html = document.documentElement;
+
+        const setTheme = () => {
+            switch (userThemePreference.theme) {
+                case 'dark':
+                    toggle.checked = true;
+                    html.classList.add('dark');
+                    html.classList.remove('light');
+                    break;
+                case 'light':
+                    toggle.checked = false;
+                    html.classList.remove('dark');
+                    html.classList.add('light');
+                    break;
+            }
+        }
+        setTheme();
+        toggle.addEventListener('click', e => {
+            if (toggle.checked) {
+                html.classList.add('dark');
+                html.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            }
+        }, false);
+    }, false);
+// @license-end
+</script>
+
+</body>
+</html>
