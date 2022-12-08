@@ -58,7 +58,7 @@ CRA로 만든 React 프로젝트 에서는 package.json 에서 proxy 값을 설�
 
 (중요) 추가 확인 및 에러 해결사항!
 
-![스크린샷 2022-12-08 16-42-58](https://user-images.githubusercontent.com/111376707/206396514-ac24b04d-ce0b-4d34-910b-71d1335f5904.png)
+![스크린샷 2022-12-08 17-47-35](https://user-images.githubusercontent.com/111376707/206400813-69c35fa9-a971-41e7-8ebb-506e3c4ab94d.png)
 
 package.json 에 proxy 부분 작성 후, npm install 을 다시 해줘야 module에 반영!
 
