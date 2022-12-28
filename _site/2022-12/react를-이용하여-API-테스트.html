@@ -4,7 +4,7 @@
 
 
 <head>
-  <title>SOOJIN BLOG</title>
+  <title>react를 이용하여 API 테스트 | SOOJIN BLOG</title>
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/assets/css/main.css" media="all">
-  <link rel="canonical" href="http://localhost:4000/categories/writing">
+  <link rel="canonical" href="http://localhost:4000/2022-12/react%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-API-%ED%85%8C%EC%8A%A4%ED%8A%B8">
   <link rel="alternate" type="application/rss+xml" title="SOOJIN BLOG"
     href="/feed.xml" />
 
@@ -146,30 +146,64 @@
     
     <main class="main">
 
-    <!-- each category page -->
+    <div class="post">
+  <div>
+    
+    <p class="post_title">react를 이용하여 API 테스트</p>
+    
+  </div>
+  <div class="post_data">
+    
+    <span class="post_date">Dec 20, 2022</span>
+    
+    
+    <span class="post_categories">
+      &raquo; 
+      <a href="/categories/TIL">TIL</a>
+    </span>
+    
+  </div>
+  <div class="post_content">
+    <p>Pre-project를 위해 백엔드와 통신 테스트를 해보기 위해 간단하게 테스트를 할 수 있도록 코드를 작성해 보았다.</p>
 
-<div class="archive">
-  <p class="archive_type">writing</p>
-  <ul>
-    
-    
-    <li>
-        <time class='archive_date' datetime='2017-11-01T00:00:00+09:00'>
-          Nov 1, 2017
-        </time>
-        <div class='archive_title'>
-          <a href='/2017-11/s2'>
-            Sample Post
-          </a>
-        </div>
-      </li>
-    
+<p>HTTP 통신 라이브러리는 axios를 사용하였다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">getData</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// get요청 테스트 함수</span>
+  <span class="nx">axios</span>
+    <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">백엔드 측에서 만든 도메인 주소</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">postData</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// post요청 테스트 함수</span>
+  <span class="nx">axios</span>
+    <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">백엔드 측에서 만든 도메인 주소</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="c1">// 보낼 정보</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+  </div>
+
+
+  
+  <div class="post_comment">
+
     
 
-  </ul>
+    
+
+
+  </div>
+  
+
 </div>
-
-<!-- main page -->
 
 
     </main>

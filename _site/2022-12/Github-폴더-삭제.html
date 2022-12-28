@@ -4,7 +4,7 @@
 
 
 <head>
-  <title>SOOJIN BLOG</title>
+  <title>Github 폴더 삭제 | SOOJIN BLOG</title>
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/assets/css/main.css" media="all">
-  <link rel="canonical" href="http://localhost:4000/categories/writing">
+  <link rel="canonical" href="http://localhost:4000/2022-12/Github-%ED%8F%B4%EB%8D%94-%EC%82%AD%EC%A0%9C">
   <link rel="alternate" type="application/rss+xml" title="SOOJIN BLOG"
     href="/feed.xml" />
 
@@ -146,30 +146,61 @@
     
     <main class="main">
 
-    <!-- each category page -->
+    <div class="post">
+  <div>
+    
+    <p class="post_title">Github 폴더 삭제</p>
+    
+  </div>
+  <div class="post_data">
+    
+    <span class="post_date">Dec 21, 2022</span>
+    
+    
+    <span class="post_categories">
+      &raquo; 
+      <a href="/categories/TIL">TIL</a>
+    </span>
+    
+  </div>
+  <div class="post_content">
+    <p>github 원격 저장소에 불필요한 폴더를 git push해버려서 이를 삭제해야 했다.</p>
 
-<div class="archive">
-  <p class="archive_type">writing</p>
-  <ul>
-    
-    
-    <li>
-        <time class='archive_date' datetime='2017-11-01T00:00:00+09:00'>
-          Nov 1, 2017
-        </time>
-        <div class='archive_title'>
-          <a href='/2017-11/s2'>
-            Sample Post
-          </a>
-        </div>
-      </li>
-    
+<h2 id="github에-있는-폴더-삭제하기">Github에 있는 폴더 삭제하기</h2>
+
+<ol>
+  <li>로컬 디렉토리와 git 저장소에서 모두 삭제</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rm -rf 폴더명
+$ git commit -m "delete folder"
+</code></pre></div></div>
+
+<ol>
+  <li>로컬 디렉토리의 폴더는 유지한 채 git 저장소에서만 폴더 삭제하기</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rm --cached -r 폴더명/
+$ git commit -m "delete folder"
+</code></pre></div></div>
+
+<p>폴더를 삭제한 후 commit &amp; push를 꼭 해주어야 한다!</p>
+
+  </div>
+
+
+  
+  <div class="post_comment">
+
     
 
-  </ul>
+    
+
+
+  </div>
+  
+
 </div>
-
-<!-- main page -->
 
 
     </main>

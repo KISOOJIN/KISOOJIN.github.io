@@ -4,7 +4,7 @@
 
 
 <head>
-  <title>SOOJIN BLOG</title>
+  <title>리액트에서 여러 개의 proxy 설정 | SOOJIN BLOG</title>
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="/assets/css/main.css" media="all">
-  <link rel="canonical" href="http://localhost:4000/categories/writing">
+  <link rel="canonical" href="http://localhost:4000/2022-12/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EC%97%AC%EB%9F%AC-%EA%B0%9C%EC%9D%98-proxy-%EC%84%A4%EC%A0%95">
   <link rel="alternate" type="application/rss+xml" title="SOOJIN BLOG"
     href="/feed.xml" />
 
@@ -146,30 +146,75 @@
     
     <main class="main">
 
-    <!-- each category page -->
+    <div class="post">
+  <div>
+    
+    <p class="post_title">리액트에서 여러 개의 proxy 설정</p>
+    
+  </div>
+  <div class="post_data">
+    
+    <span class="post_date">Dec 28, 2022</span>
+    
+    
+    <span class="post_categories">
+      &raquo; 
+      <a href="/categories/TIL">TIL</a>
+    </span>
+    
+  </div>
+  <div class="post_content">
+    <h2 id="리액트에서-여러-개의-proxy-설정">리액트에서 여러 개의 proxy 설정</h2>
 
-<div class="archive">
-  <p class="archive_type">writing</p>
-  <ul>
-    
-    
-    <li>
-        <time class='archive_date' datetime='2017-11-01T00:00:00+09:00'>
-          Nov 1, 2017
-        </time>
-        <div class='archive_title'>
-          <a href='/2017-11/s2'>
-            Sample Post
-          </a>
-        </div>
-      </li>
-    
+<p>리액트에서 여러 개의 proxy를 설정하기 위해서,</p>
+
+<p>npm install http-proxy-middleware 또는 yarn add http-proxy-middleware 로 미들웨어를 설치해준다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+npm install http-proxy-middleware
+
+or
+
+yarn add http-proxy-middleware
+</code></pre></div></div>
+
+<p>프로젝트 폴더내 src 폴더안에 ( /src/setupProxy.js )</p>
+
+<p><code class="language-plaintext highlighter-rouge">setupProxy.js</code>라는 폴더를 만든후 다음과 같이 입력한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span> <span class="nx">createProxyMiddleware</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">http-proxy-middleware</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+    <span class="nx">createProxyMiddleware</span><span class="p">(</span><span class="dl">"</span><span class="s2">/api</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">target</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://localhost:3001/</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">changeOrigin</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">})</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">/api</code> 는 프록시를 사용할 경로 (path) 이고,</p>
+
+<p><code class="language-plaintext highlighter-rouge">target</code> 은 프록시로 이용할 서버의 주소이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">changeOrigin</code>은 대상 서버의 구성에 따라 호스트 헤더의 변경을 해주는 옵션이다.</p>
+
+  </div>
+
+
+  
+  <div class="post_comment">
+
     
 
-  </ul>
+    
+
+
+  </div>
+  
+
 </div>
-
-<!-- main page -->
 
 
     </main>

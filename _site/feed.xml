@@ -6,12 +6,128 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 08 Dec 2022 17:35:21 +0900</pubDate>
-    <lastBuildDate>Thu, 08 Dec 2022 17:35:21 +0900</lastBuildDate>
+    <pubDate>Wed, 28 Dec 2022 10:25:46 +0900</pubDate>
+    <lastBuildDate>Wed, 28 Dec 2022 10:25:46 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
-        <title>CORS 에러를 해결과 proxy</title>
+        <title>리액트에서 여러 개의 proxy 설정</title>
+        <description>&lt;h2 id=&quot;리액트에서-여러-개의-proxy-설정&quot;&gt;리액트에서 여러 개의 proxy 설정&lt;/h2&gt;
+
+&lt;p&gt;리액트에서 여러 개의 proxy를 설정하기 위해서,&lt;/p&gt;
+
+&lt;p&gt;npm install http-proxy-middleware 또는 yarn add http-proxy-middleware 로 미들웨어를 설치해준다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+npm install http-proxy-middleware
+
+or
+
+yarn add http-proxy-middleware
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;프로젝트 폴더내 src 폴더안에 ( /src/setupProxy.js )&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setupProxy.js&lt;/code&gt;라는 폴더를 만든후 다음과 같이 입력한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createProxyMiddleware&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;http-proxy-middleware&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;createProxyMiddleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/api&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;http://localhost:3001/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;changeOrigin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/api&lt;/code&gt; 는 프록시를 사용할 경로 (path) 이고,&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target&lt;/code&gt; 은 프록시로 이용할 서버의 주소이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;changeOrigin&lt;/code&gt;은 대상 서버의 구성에 따라 호스트 헤더의 변경을 해주는 옵션이다.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 28 Dec 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-12/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EC%97%AC%EB%9F%AC-%EA%B0%9C%EC%9D%98-proxy-%EC%84%A4%EC%A0%95</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-12/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EC%97%AC%EB%9F%AC-%EA%B0%9C%EC%9D%98-proxy-%EC%84%A4%EC%A0%95</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>Github 폴더 삭제</title>
+        <description>&lt;p&gt;github 원격 저장소에 불필요한 폴더를 git push해버려서 이를 삭제해야 했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;github에-있는-폴더-삭제하기&quot;&gt;Github에 있는 폴더 삭제하기&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;로컬 디렉토리와 git 저장소에서 모두 삭제&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git rm -rf 폴더명
+$ git commit -m &quot;delete folder&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;로컬 디렉토리의 폴더는 유지한 채 git 저장소에서만 폴더 삭제하기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git rm --cached -r 폴더명/
+$ git commit -m &quot;delete folder&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;폴더를 삭제한 후 commit &amp;amp; push를 꼭 해주어야 한다!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 21 Dec 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-12/Github-%ED%8F%B4%EB%8D%94-%EC%82%AD%EC%A0%9C</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-12/Github-%ED%8F%B4%EB%8D%94-%EC%82%AD%EC%A0%9C</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>react를 이용하여 API 테스트</title>
+        <description>&lt;p&gt;Pre-project를 위해 백엔드와 통신 테스트를 해보기 위해 간단하게 테스트를 할 수 있도록 코드를 작성해 보았다.&lt;/p&gt;
+
+&lt;p&gt;HTTP 통신 라이브러리는 axios를 사용하였다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;axios&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;axios&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// get요청 테스트 함수&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;axios&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;백엔드 측에서 만든 도메인 주소&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;postData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// post요청 테스트 함수&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;axios&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;백엔드 측에서 만든 도메인 주소&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// 보낼 정보&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 20 Dec 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2022-12/react%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-API-%ED%85%8C%EC%8A%A4%ED%8A%B8</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-12/react%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-API-%ED%85%8C%EC%8A%A4%ED%8A%B8</guid>
+        
+        
+        <category>TIL</category>
+        
+      </item>
+    
+      <item>
+        <title>CORS 에러 해결과 proxy</title>
         <description>&lt;h1&gt;CORS에러 해결&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/206390640-f61b0a46-028e-4ecf-a6d4-c945677704d3.png&quot; alt=&quot;스크린샷 2022-12-08 16-43-56&quot; /&gt;&lt;/p&gt;
@@ -66,7 +182,7 @@ CRA로 만든 React 프로젝트 에서는 package.json 에서 proxy 값을 설�
 
 &lt;p&gt;(중요) 추가 확인 및 에러 해결사항!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/206396514-ac24b04d-ce0b-4d34-910b-71d1335f5904.png&quot; alt=&quot;스크린샷 2022-12-08 16-42-58&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/111376707/206400813-69c35fa9-a971-41e7-8ebb-506e3c4ab94d.png&quot; alt=&quot;스크린샷 2022-12-08 17-47-35&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;package.json 에 proxy 부분 작성 후, npm install 을 다시 해줘야 module에 반영!&lt;/p&gt;
 
@@ -144,8 +260,8 @@ module.exports = function(app) {
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 08 Dec 2022 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2022-12/CORS-%EC%97%90%EB%9F%AC%EB%A5%BC-%ED%95%B4%EA%B2%B0%EA%B3%BC-proxy</link>
-        <guid isPermaLink="true">http://localhost:4000/2022-12/CORS-%EC%97%90%EB%9F%AC%EB%A5%BC-%ED%95%B4%EA%B2%B0%EA%B3%BC-proxy</guid>
+        <link>http://localhost:4000/2022-12/CORS-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%EA%B3%BC-proxy</link>
+        <guid isPermaLink="true">http://localhost:4000/2022-12/CORS-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%EA%B3%BC-proxy</guid>
         
         
         <category>TIL</category>
