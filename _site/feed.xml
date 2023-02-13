@@ -6,9 +6,144 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Dec 2022 10:25:46 +0900</pubDate>
-    <lastBuildDate>Wed, 28 Dec 2022 10:25:46 +0900</lastBuildDate>
+    <pubDate>Mon, 13 Feb 2023 22:13:54 +0900</pubDate>
+    <lastBuildDate>Mon, 13 Feb 2023 22:13:54 +0900</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Main Project 회고</title>
+        <description>&lt;h1 id=&quot;메인-프로젝트-회고azit를-마무리하며&quot;&gt;메인 프로젝트 회고(azit를 마무리하며…)&lt;/h1&gt;
+
+&lt;h2 id=&quot;202301--202302-4주&quot;&gt;2023.01 ~ 2023.02 (4주)&lt;/h2&gt;
+
+&lt;h3 id=&quot;fe-4명-be-3명&quot;&gt;FE: 4명, BE: 3명&lt;/h3&gt;
+
+&lt;h3 id=&quot;기술스택-react-react-query-styled-components-react-cropper-react-daum-postcode-axios&quot;&gt;기술스택: React, React-query, Styled-components, React-cropper, React-daum-postcode, Axios&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;150&quot; alt=&quot;Logo&quot; src=&quot;https://user-images.githubusercontent.com/111376707/218445238-867a2604-3f3d-440a-9dfc-05bedad778b7.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;서비스-기획-의도&quot;&gt;서비스 기획 의도&lt;/h3&gt;
+
+&lt;p&gt;당신의 취미, 우리도 알고 싶습니다. 취미를 통해 만드는 우리만의 공간 azit
+‘누구나 한번쯤 같은 취미를 가진 사람을 만나 공유하고 싶지 않을까’ 라는 생각에서
+같은 취미를 가진 사람을 찾아, 원하는 지역에서 만나 취미를 공유 하는 서비스를 구현하였다.&lt;/p&gt;
+
+&lt;h3 id=&quot;userflow&quot;&gt;UserFlow&lt;/h3&gt;
+
+&lt;p&gt;&lt;img width=&quot;2124&quot; alt=&quot;Group 655 (1)&quot; src=&quot;https://user-images.githubusercontent.com/111376707/218448310-5d593a59-a240-4e12-adca-5a1ab0e08687.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;내가-담당한-부분&quot;&gt;내가 담당한 부분&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;아지트(모임) 생성, 조회, 수정, 삭제(CRUD)&lt;/li&gt;
+  &lt;li&gt;아지트 가입 신청, 가입 취소&lt;/li&gt;
+  &lt;li&gt;아지트 멤버관리 조회, 추가, 거절, 강퇴(CRUD)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;아지트-생성-및-미리보기-페이지&quot;&gt;아지트 생성 및 미리보기 페이지&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;400&quot; alt=&quot;azitCreatePage&quot; src=&quot;https://user-images.githubusercontent.com/111376707/218446556-2ab0a55c-bbf7-4198-8388-76f6a752613e.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;아지트 생성 및 미리보기 페이지를 구현하였다.
+아지트 생성 페이지와 생성 전 미리보기 페이지를 구현했고 생성 전 미리보기 페이지에서 아지트 생성 기능을 구현하였다.
+아지트 배너 이미지 첨부시 크롭 기능을 구현하였으며, 오프라인 만남시 주소 찾기 기능을 구현하였다.(react-cropper, react-daum-postcode 사용)
+온라인, 오프라인 선택시 checkbox radio 이용&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;각각의 input마다 제약조건을 걸어야 해서 처음에 많이 삽질을 했지만 하나하나 해결해나갔던 것 같다.
+추후에 react-hook-form이라는 라이브러리를 알게 되었는데 다음에 폼을 작성할 때 사용해보려고 한다.
+온라인, 오프라인 선택시 처음에는 button으로 만들었다가 그럼 다음 입력 창으로 넘어가면 선택된 버튼의 상태가 유지되지 않고 사라져버려서 탈락…
+그럼 도대체 뭘로 구현할까 고민하다가 checkbox를 이용해야겠다고 생각하게 되었고 둘 중 한개의 값만 선택되도록 해야하기 때문에 radio속성이 적합하겠다 판단하였다.
+지금 생각하면 그렇게 어려운 것도 아니었는데 처음 해보는거라 정말 너무 어려웠다… 하지만 성공해서 넘 행복했다.
+그리고 아지트 생성에 좀 더 완성도 있게 만들고 싶어서 배너 이미지를 첨부 시 크롭기능과 오프라인 만남 시 주소 찾기 기능을 구현하였다.
+크롭 기능은 react-cropper 라이브러리를 이용하였고 주소 찾기 기능은 react-daum-postcode 라이브러리를 이용하였다.
+원리는 어렵지 않았지만 처음 구현해보는 것이라 정말 힘들고 삽질도 많이 했었다.
+블로그도 찾아보고 동영상도 찾아보았지만 가장 좋은 것은 공식문서를 보고 천천히 옵션과 메소드를 이해하면서 하는게 가장 좋은 학습법이라는 것을 깨달았다.&lt;/p&gt;
+
+&lt;h4 id=&quot;아지트-설정-페이지&quot;&gt;아지트 설정 페이지&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;260&quot; height=&quot;480&quot; alt=&quot;azitMemberPage&quot; src=&quot;https://user-images.githubusercontent.com/111376707/218462004-2a0d2c5b-25a0-4a1e-8ffa-43d9b75e5993.gif&quot; /&gt;
+&lt;img width=&quot;260&quot; height=&quot;480&quot; alt=&quot;azitMemberPage&quot; src=&quot;https://user-images.githubusercontent.com/111376707/218462366-47af90d6-ee68-4a98-9203-43c93f93e7c4.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;아지트 설정 페이지에서는 아지트 멤버관리, 아지트 수정, 아지트 삭제로 이루어져 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;아지트 수정 페이지는 수정 제한 항목이 있는데, 아지트 모임에 1명이라도 신청을 하게 되면, 수정 제한 항목은 input 창이 disabled되면서 수정을 못하게 구현해 놓았다.&lt;/p&gt;
+
+&lt;h4 id=&quot;아지트-멤버-관리&quot;&gt;아지트 멤버 관리&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;400&quot; alt=&quot;azitMemberPage&quot; src=&quot;https://user-images.githubusercontent.com/111376707/218448708-2b1cf533-d73e-42bb-b0e5-0d994927c889.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;생성된 아지트에 사용자들이 가입하고 싶은 아지트에 가입 신청을 하게 되면 호스트는 아지트 멤버 관리 페이지에서 신청한 사람을 조회가능하며, 신청한 사람을 멤버로 승인할지, 거절할지, 승인된 사람을 강퇴시킬지를 관리할 수 있다.
+해당 페이지에서는 멤버 조회, 승인, 거절, 강퇴 기능을 구현했다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;여기서 가장 당황했던 것은 백엔드 쪽에서 만들어 주신 강퇴 api가 delete가 아니라 patch 메소드를 사용해서 만들어주셨는데 우리 팀은 백엔드 쪽과의 통신 라이브러리로 axios를 선정해서 axios를 사용했는데 계속 unathourized 401에러가 뜨는 것이다. 백엔드 담당자 분께 curl을 보내드리고 한번 다시 확인 부탁드리고 프론트쪽에도 문제가 없는지 확인해 보았는데 둘다 문제가 없는 것 같다고 왜 이러는지 모르겠다고 정말 몇 시간동안 고통스러워하다 한번 fetch로 바꿔서 해봤는데 fetch로는 잘 됐다. 그래서 왜 fetch로는 잘 되는거지 하면서 axios로 안되는 원인을 찾는데 patch메소드는 대게 body값을 같이 보내주는데 내가 받은 api명세서에는 body값을 따로 보내주지 않는 api였다. 대신 서버가 사용자가 보낸게 맞는지 확인하기 위해 헤더에는 accesstoken을 같이 보내주어야 한다. 그런데 문제는 헤더를 body로 인식해버렸던 것이었다… 그래서 accesstoken이 인식이 안되서 401에러가 뜬 것이었다…
+그래서 body에 임의의 값을 넣어보냈더니 헤더를 헤더로 인식해서 해당 오류를 해결할 수 있었다.
+같이 고민해주고 해결해주려고 노력했던 팀원분들께 무한 감사를…&lt;/p&gt;
+
+&lt;h4 id=&quot;아지트-가입하기-및-취소&quot;&gt;아지트 가입하기 및 취소&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;400&quot; alt=&quot;azitJoin&quot; src=&quot;https://user-images.githubusercontent.com/111376707/218449197-f62bf85f-6519-46ba-9406-21a79f88d267.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;해당 페이지는 아지트 가입하기 및 취소 기능을 구현하였다. 이용자의 상태에 따라 개별 아지트 상세 조회시 나타나는 버튼이 다른데 호스트가 아니면서 아지트 신청을 한 상태가 아니면 가입하기 버튼이 나오는데 해당 버튼을 클릭하면 가입하기 페이지로 넘어가고 호스트가 아지트 생성 시 작성한 질문에 답변을 하는 페이지이다. 해당 페이지에서는 아지트 질문 조회 api를 이용해서 호스트의 아지트 질문 내역이 나오도록 만들었다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;이미지-크롭기능&quot;&gt;이미지 크롭기능&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;400&quot; alt=&quot;crop&quot; src=&quot;https://user-images.githubusercontent.com/111376707/218444542-fc788a83-7e9e-499d-9f9b-2f4973d2572f.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;react-cropper라는 라이브러리를 사용하여 구현하였다. 초반에 원리는 어려워 보이지 않는데 처음 구현해봐서 그런지 삽질을 엄청했다…
+input 이랑 label을 연결시켜서 label을 클릭하면 파일 첨부 창이 뜨게 만들었다. react에서는 htmlFor을 사용해야한다는 것도 처음 알았다!
+원했던 것보다는 완성도 있어 보이진 않았지만 그래도 기능을 구현해서 뿌듯했다.
+추후에 더 완벽하게 구현하고 싶다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;마무리-소감&quot;&gt;마무리 소감&lt;/h3&gt;
+
+&lt;p&gt;내가 여기까지 오다니… 코딩의 코짜도 모르던 내가 드디어 프로젝트까지 마무리를 했다.
+두번째 협업 프로젝트지만 프리프로젝트와 달리 메인 프로젝트는 기획에서부터 디자인 모든 것을 새로 창조해내야 했기 때문에 조금은 걱정도 되었지만, 좋은 팀원들을 만나 함께 정말 열심히 했던 것 같다. 조금 더 잘 할 수 있었지 않을까라는 아쉬움은 언제나 존재하기 때문에 그러한 아쉬움을 제외하고 정말 행복하게 후회없이 프로젝트를 마무리 할 수 있어서 좋았다.
+새로운 라이브러리로 사용해보면서 기능을 구현해보며 머리를 싸매며 고생했지만 그만큼 즐거움도 컸던 것 같다.
+멘토님이 추천해주신 react-query도 처음 사용해보았는데 바로 서버를 관리해서 로딩일 때, 오류일때 각각 페이지를 다르게 렌더링 할 수 있어서 좋았던 것 같다. 그리고 데이터가 변하지 않으면 서버에서 데이터를 받아오지 않아 부담이 적게 든다는 점도 좋았다. 하지만 아직 완벽하게 잘 다룬다고 말 할 수 없기 때문에 좀 더 공부를 해보려고 한다.
+저번 프리프로젝트에서는 로그인 기능, 회원가입 쪽을 구현해서 이번에는 crud를 구현해보고 싶어서 도전해보았는데 한번 패턴을 익히니까 점점 쉽게 할 수 있었다.
+이번 프로젝트를 통해 좀 더 기본기를 다질 수 있었고 해낼 수 있다는 자신감도 가질 수 있었고 백엔드와 함께 협업하면서 어떤 점을 고려해야 하는지 조금은 알게 된 것 같아 좋았으며 팀원들과 함께 충돌도 일으키면서 git사용법을 숙지한 것도 정말 소중한 경험이었던 것 같다. 이 경험을 바탕으로 더욱 성장하도록 열심히 달려나가도록 하겠다!!&lt;/p&gt;
+
+&lt;h3 id=&quot;우리팀-demo-day&quot;&gt;우리팀 Demo-Day&lt;/h3&gt;
+
+&lt;p&gt;&lt;img width=&quot;487&quot; alt=&quot;Screenshot_2023-02-03_at_9 45 30 (1)&quot; src=&quot;https://user-images.githubusercontent.com/111376707/218449588-90e52ad1-ba48-435a-a3ce-3e15e6dc8d21.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+같이 함께해준 팀원 모두 감사하고 우리 모두 성공해요…&lt;/p&gt;
+</description>
+        <pubDate>Wed, 08 Feb 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2023-02/Main-Project-%ED%9A%8C%EA%B3%A0</link>
+        <guid isPermaLink="true">http://localhost:4000/2023-02/Main-Project-%ED%9A%8C%EA%B3%A0</guid>
+        
+        
+        <category>project</category>
+        
+      </item>
     
       <item>
         <title>리액트에서 여러 개의 proxy 설정</title>
@@ -2225,60 +2360,6 @@ Math.random()등으로 무작위로 생성된 값을 key로 지정하게 되면,
         
         
         <category>TIL</category>
-        
-      </item>
-    
-      <item>
-        <title>Sample Post</title>
-        <description>&lt;p&gt;This is a sample post.&lt;br /&gt;
-&lt;dfn info=&quot;You can add extra information&quot;&gt;Hover&lt;/dfn&gt; me.&lt;/p&gt;
-
-&lt;h2 id=&quot;header&quot;&gt;Header&lt;/h2&gt;
-
-&lt;h1 id=&quot;head-1-&quot;&gt;Head 1: ‘#’&lt;/h1&gt;
-&lt;h2 id=&quot;head-2-&quot;&gt;Head 2: ‘##’&lt;/h2&gt;
-&lt;h3 id=&quot;head-3-&quot;&gt;Head 3: ‘###’&lt;/h3&gt;
-
-&lt;h2 id=&quot;code-block&quot;&gt;Code block&lt;/h2&gt;
-&lt;p&gt;A Python Example:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# Socrates
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;The only true wisdom is in knowing you know nothing.&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;A HTML Example:&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;quote&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Maya Angelou --&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Try to be a rainbow in someone&apos;s cloud.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;A C Example:&lt;/p&gt;
-
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Confucius&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Everything has beauty, but not everyone sees it.&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Wed, 01 Nov 2017 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2017-11/s2</link>
-        <guid isPermaLink="true">http://localhost:4000/2017-11/s2</guid>
-        
-        
-        <category>writing</category>
         
       </item>
     
